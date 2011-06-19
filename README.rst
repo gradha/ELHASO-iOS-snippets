@@ -45,7 +45,62 @@ win!
 Installation
 ------------
 
-Blah blah blah.
+The files
+*********
+
+For the purpose of tracking external source code, I recommend you to create an
+``external`` subdirectory at the root of your own project. Then, you can either
+download and copy this repository there under the name ``ELHASO-iOS-snippets``,
+or you can checkout a submodule. For the git submodule you would do::
+
+    cd Your-project
+    mkdir external
+    git submodule init
+    git submodule add url-to-github-repo external/ELHASO-iOS-snippets
+
+These commands would create an ``external`` directory and populate it with the
+source code. For the github url of the repo you could use my repo, or you could
+fork it and use your own. This is recommended: if I removed my repo, yours
+would still live, and it is also more obvious to watch/track different changes
+among repositories.
+
+If you are *not* using git, I recommend you to modify the ``README.rst`` file
+and make it contain a timestamp, date, or github checkout sha-1 so that in the
+future you know if new versions have been released by comparing this mark.
+
+
+Xcode project
+*************
+
+Now that the files somehow live inside your project, you have to tell Xcode to
+find them. For testing reasons, add the following line to one of your **.m**
+files::
+
+    #include "ELHASO.h"
+
+After this change your project should not build due to errors. Open the
+project's information, and in the **Build** tab find the **Header Search
+Paths** setting. Add to this value (if you already have other settings) the
+following line::
+
+    external/ELHASO-iOS-snippets/src
+
+After this change your project should build again. However, this will only work
+for the header files, since the source code is still not being linked by Xcode,
+and therefore using any of the categories will fail during the link phase.
+Create in your project's file tree new **external** group. Then, right clicking
+on the group select "**Add/Existing files...**". Navigate and add the ``src``
+subdirectory. You don't want to include anything else.
+
+Now using a category in your project should work.  However, the project outline
+looks weird with this **external/src** branch.  Rename the **src** part to
+**ELHASO-iOS-snippets** (or something shorter) so you can recognise it more
+easily. This will not affect your build, since Xcode groups don't necessarily
+match directories and/or files.
+
+Now you can include any other file like ``NSArray+ELHASO.h`` in your source
+code and use their code.
+
 
 
 Documentation

@@ -1,7 +1,6 @@
-#import "categories/CLLocation+ELHASO.h"
+#import "CLLocation+ELHASO.h"
 
-#import "constants.h"
-#import "macro.h"
+#import "ELHASO.h"
 
 #import <math.h>
 

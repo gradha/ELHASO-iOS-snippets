@@ -14,6 +14,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ExampleViewController.m */; };
+		D5173C8D13AEA596001EEACC /* NSArray+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,23 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Example_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Example-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		D5173C7B13AEA596001EEACC /* CLLocation+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C7C13AEA596001EEACC /* CLLocation+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C7D13AEA596001EEACC /* ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELHASO.h; sourceTree = "<group>"; };
+		D5173C7E13AEA596001EEACC /* NSArray+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C8013AEA596001EEACC /* NSDictionary+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C8113AEA596001EEACC /* NSDictionary+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C8213AEA596001EEACC /* NSString+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C8313AEA596001EEACC /* NSString+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C8413AEA596001EEACC /* UIImage+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C8513AEA596001EEACC /* UIImage+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C8613AEA596001EEACC /* UIImageView+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C8713AEA596001EEACC /* UIImageView+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C8813AEA596001EEACC /* UILabel+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C8913AEA596001EEACC /* UILabel+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ELHASO.m"; sourceTree = "<group>"; };
+		D5173C8A13AEA596001EEACC /* UINavigationController+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ELHASO.h"; sourceTree = "<group>"; };
+		D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ELHASO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D5173C7813AEA553001EEACC /* external */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -103,6 +122,39 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		D5173C7813AEA553001EEACC /* external */ = {
+			isa = PBXGroup;
+			children = (
+				D5173C7A13AEA596001EEACC /* ELHASO-iOS-snippets */,
+			);
+			name = external;
+			sourceTree = "<group>";
+		};
+		D5173C7A13AEA596001EEACC /* ELHASO-iOS-snippets */ = {
+			isa = PBXGroup;
+			children = (
+				D5173C7B13AEA596001EEACC /* CLLocation+ELHASO.h */,
+				D5173C7C13AEA596001EEACC /* CLLocation+ELHASO.m */,
+				D5173C7D13AEA596001EEACC /* ELHASO.h */,
+				D5173C7E13AEA596001EEACC /* NSArray+ELHASO.h */,
+				D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */,
+				D5173C8013AEA596001EEACC /* NSDictionary+ELHASO.h */,
+				D5173C8113AEA596001EEACC /* NSDictionary+ELHASO.m */,
+				D5173C8213AEA596001EEACC /* NSString+ELHASO.h */,
+				D5173C8313AEA596001EEACC /* NSString+ELHASO.m */,
+				D5173C8413AEA596001EEACC /* UIImage+ELHASO.h */,
+				D5173C8513AEA596001EEACC /* UIImage+ELHASO.m */,
+				D5173C8613AEA596001EEACC /* UIImageView+ELHASO.h */,
+				D5173C8713AEA596001EEACC /* UIImageView+ELHASO.m */,
+				D5173C8813AEA596001EEACC /* UILabel+ELHASO.h */,
+				D5173C8913AEA596001EEACC /* UILabel+ELHASO.m */,
+				D5173C8A13AEA596001EEACC /* UINavigationController+ELHASO.h */,
+				D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */,
+			);
+			name = "ELHASO-iOS-snippets";
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -167,6 +219,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ExampleAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ExampleViewController.m in Sources */,
+				D5173C8D13AEA596001EEACC /* NSArray+ELHASO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +261,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../src;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
@@ -221,6 +275,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../src;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;

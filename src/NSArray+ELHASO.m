@@ -1,6 +1,6 @@
-#import "categories/NSArray+ELHASO.h"
+#import "NSArray+ELHASO.h"
 
-#import "macro.h"
+#import "ELHASO.h"
 
 @implementation NSArray (ELHASO)
 

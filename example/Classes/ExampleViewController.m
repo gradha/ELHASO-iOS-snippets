@@ -8,6 +8,9 @@
 
 #import "ExampleViewController.h"
 
+#import "ELHASO.h"
+#import "NSArray+ELHASO.h"
+
 @implementation ExampleViewController
 
 @synthesize label;
@@ -38,6 +41,13 @@
 
 - (void)run_tests
 {
+	LOG(@"Running the test suite...");
+	NSArray *t1 = [NSArray arrayWithObject:@"Test"];
+	LOG(@"Getting first entry of NSArray '%@'", [t1 get:0]);
+	LOG(@"Getting bad entry of NSArray '%@'", [t1 get:1]);
+	LOG(@"Repeating with NON_NIL_STRING '%@'",
+		NON_NIL_STRING([t1 get:1]));
+
 	[doing stopAnimating];
 	self.label.text = @"Did run all!";
 	is_running = NO;
