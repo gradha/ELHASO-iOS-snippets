@@ -8,6 +8,7 @@
 .DS_Store
 build/
 dist/
+docs/*.html
 project.xcworkspace/
 tags
 xcuserdata/
