@@ -10,7 +10,13 @@
 
 @interface ExampleViewController : UIViewController
 {
+	BOOL is_running;
 }
+
+@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *doing;
+
+- (IBAction)start_tests;
 
 @end
 
