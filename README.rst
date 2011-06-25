@@ -56,7 +56,9 @@ or you can checkout a submodule. For the git submodule you would do::
     cd Your-project
     mkdir external
     git submodule init
-    git submodule add url-to-github-repo external/ELHASO-iOS-snippets
+    git submodule add \
+        git://github.com/gradha/ELHASO-iOS-snippets.git \
+        external/ELHASO-iOS-snippets
 
 These commands would create an ``external`` directory and populate it with the
 source code. For the github url of the repo you could use my repo, or you could
