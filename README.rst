@@ -69,8 +69,8 @@ and make it contain a timestamp, date, or github checkout sha-1 so that in the
 future you know if new versions have been released by comparing this mark.
 
 
-Xcode project
-*************
+Your Xcode project settings
+***************************
 
 Now that the files somehow live inside your project, you have to tell Xcode to
 find them. For testing reasons, add the following line to one of your **.m**
@@ -88,19 +88,31 @@ following line::
 After this change your project should build again. However, this will only work
 for the header files, since the source code is still not being linked by Xcode,
 and therefore using any of the categories will fail during the link phase.
-Create in your project's file tree new **external** group. Then, right clicking
-on the group select "**Add/Existing files...**". Navigate and add the ``src``
-subdirectory. You don't want to include anything else.
+Create in your project's file tree a new **external** group. Then, right
+clicking on the group select "**Add/Existing files...**". Navigate and add the
+``src`` subdirectory. You don't want to include anything else like this README
+or the example directory.
 
 Now using a category in your project should work.  However, the project outline
 looks weird with this **external/src** branch.  Rename the **src** part to
 **ELHASO-iOS-snippets** (or something shorter) so you can recognise it more
 easily. This will not affect your build, since Xcode groups don't necessarily
-match directories and/or files.
+match directories and/or files.  Now you can include any other file like
+``NSArray+ELHASO.h`` in your source code and use their code.
 
-Now you can include any other file like ``NSArray+ELHASO.h`` in your source
-code and use their code.
+One last step would be to define custom macros for your project, since there
+are some preprocessor tricks used by this code. In your project's build
+settings look for the gcc option "**Preprocessor Macros**". Before changing
+anything, verify that instead of "**All configurations**" selected in the
+listbox you are on either **Debug** or **Release**. Define the following
+macros:
 
+* For Debug settings: **DEBUG**
+* For Release settings: **NDEBUG** and **RELEASE**
+
+If you don't define these preprocessor macros for your projects handy macros
+like DLOG or RASSERT may not do what you expect them to do. Feel free to leave
+other of your macros or add your own.
 
 
 Documentation
