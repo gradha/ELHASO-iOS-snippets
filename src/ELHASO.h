@@ -10,10 +10,8 @@
 /// Log only if the symbol DEBUG is defined.
 #ifdef DEBUG
 #define DLOG(X, ...)		NSLog(X, ##__VA_ARGS__)
-#import "VTPG_Common.h"
 #else
 #define DLOG(X, ...)		do {} while (0)
-#define LOG_EXPR(X)			do {} while (0)
 #endif // DEBUG
 
 /// Log always, avoid stupid CamelCase.

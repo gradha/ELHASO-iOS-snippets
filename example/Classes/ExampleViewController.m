@@ -36,12 +36,18 @@
 	is_running = YES;
 	[doing startAnimating];
 	self.label.text = @"";
-	[self performSelector:@selector(run_tests) withObject:nil afterDelay:1];
+	[self performSelector:@selector(run_tests) withObject:nil afterDelay:0];
 }
 
 - (void)run_tests
 {
 	LOG(@"Running the test suite...");
+
+	// Testing log macros.
+	DLOG(@"This message only seen if you are on your DEBUG build");
+	LOG(@"This message seen always, did you see the previous DEBUG one?");
+
+	// Testing NON_NIL_STRING and NSArray getter.
 	NSArray *t1 = [NSArray arrayWithObject:@"Test"];
 	LOG(@"Getting first entry of NSArray '%@'", [t1 get:0]);
 	LOG(@"Getting bad entry of NSArray '%@'", [t1 get:1]);
