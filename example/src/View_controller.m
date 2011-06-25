@@ -8,6 +8,7 @@
 
 #import "View_controller.h"
 
+#import "CLLocation+ELHASO.h"
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
 #import "NSString+ELHASO.h"
@@ -92,6 +93,11 @@
 	LOG(@"%@", ASK_GETTER(round, recursiveDescription, nil));
 }
 
+- (void)run_location_tests
+{
+	LOG(@"You were doing this...");
+}
+
 - (void)run_tests
 {
 	LOG(@"Running the test suite...");
@@ -106,6 +112,7 @@
 	[self run_nsstring_tests];
 	[self run_image_tests];
 	[self run_label_tests];
+	[self run_location_tests];
 
 	[doing stopAnimating];
 	LOG(@"Finished all tests!");
