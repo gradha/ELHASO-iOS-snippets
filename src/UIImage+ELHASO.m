@@ -1,13 +1,21 @@
-#import "categories/UIImage+ELHASO.h"
+#import "UIImage+ELHASO.h"
 
-#import "macro.h"
-#import "settings.h"
+#import "ELHASO.h"
+//#import "settings.h"
 
 @implementation UIImage (ELHASO)
 
+/** Like calling UIImage::scale_to:proportional: with YES
+ */
+- (UIImage*)scale_to:(CGSize)size
+{
+	return [self scale_to:size proportional:YES];
+}
+
 /** Scales an image to the requested size if necessary.
  * If you want the scaling to be proportional, pass YES as the parameter,
- * otherwise the image will fill the target size.
+ * otherwise the image will fill the target size. With proportional scaling the
+ * background of the image will be transparent.
  *
  * \return Returns an autoreleased version of the image scaled to the specified
  * size. Might return self if no scaling is needed.
@@ -69,6 +77,7 @@
 	}
 
 	// Do we have to slash scaled images?
+/*
 	if (gSlash_scaled_images) {
 		CGContextSetLineWidth(c, 3);
 		[[UIColor whiteColor] set];
@@ -81,6 +90,7 @@
 		CGContextAddLineToPoint(c, rect.size.width - 1, rect.size.height - 1);
 		CGContextStrokePath(c);
 	}
+*/
 
 	UIImage *scaled = UIGraphicsGetImageFromCurrentImageContext();
 	NSAssert(scaled, @"Couldn't scale image?");

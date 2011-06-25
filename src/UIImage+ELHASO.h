@@ -3,6 +3,7 @@
  */
 @interface UIImage (ELHASO)
 
+- (UIImage*)scale_to:(CGSize)size;
 - (UIImage*)scale_to:(CGSize)size proportional:(BOOL)proportional;
 
 @end

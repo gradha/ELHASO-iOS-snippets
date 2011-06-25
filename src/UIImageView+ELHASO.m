@@ -1,4 +1,4 @@
-#import "categories/UIImageView+ELHASO.h"
+#import "UIImageView+ELHASO.h"
 
 @implementation UIImageView (ELHASO)
 

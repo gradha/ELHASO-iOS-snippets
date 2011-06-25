@@ -13,6 +13,9 @@
 		D5173C8D13AEA596001EEACC /* NSArray+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */; };
 		D519887E13B66BF500197DDC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D519887D13B66BF500197DDC /* MainWindow.xib */; };
 		D51988B013B685DA00197DDC /* NSString+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8313AEA596001EEACC /* NSString+ELHASO.m */; };
+		D51988C113B6877700197DDC /* electric_hands_software_hand_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D51988C013B6877700197DDC /* electric_hands_software_hand_logo.jpg */; };
+		D51988C213B6886100197DDC /* UIImageView+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8713AEA596001EEACC /* UIImageView+ELHASO.m */; };
+		D51988E613B68A2100197DDC /* UIImage+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8513AEA596001EEACC /* UIImage+ELHASO.m */; };
 		D5330A3713B669C3003BE0FD /* App_delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3013B669C3003BE0FD /* App_delegate.m */; };
 		D5330A3913B669C3003BE0FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3413B669C3003BE0FD /* main.m */; };
 		D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3613B669C3003BE0FD /* View_controller.m */; };
@@ -41,6 +44,7 @@
 		D5173C8A13AEA596001EEACC /* UINavigationController+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ELHASO.h"; sourceTree = "<group>"; };
 		D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ELHASO.m"; sourceTree = "<group>"; };
 		D519887D13B66BF500197DDC /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		D51988C013B6877700197DDC /* electric_hands_software_hand_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = electric_hands_software_hand_logo.jpg; sourceTree = "<group>"; };
 		D5330A2F13B669C3003BE0FD /* App_delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App_delegate.h; sourceTree = "<group>"; };
 		D5330A3013B669C3003BE0FD /* App_delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App_delegate.m; sourceTree = "<group>"; };
 		D5330A3213B669C3003BE0FD /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Example-Info.plist"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		D519887C13B66BF500197DDC /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				D51988C013B6877700197DDC /* electric_hands_software_hand_logo.jpg */,
 				D519887D13B66BF500197DDC /* MainWindow.xib */,
 			);
 			path = resources;
@@ -207,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D519887E13B66BF500197DDC /* MainWindow.xib in Resources */,
+				D51988C113B6877700197DDC /* electric_hands_software_hand_logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +228,8 @@
 				D5330A3913B669C3003BE0FD /* main.m in Sources */,
 				D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */,
 				D51988B013B685DA00197DDC /* NSString+ELHASO.m in Sources */,
+				D51988C213B6886100197DDC /* UIImageView+ELHASO.m in Sources */,
+				D51988E613B68A2100197DDC /* UIImage+ELHASO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

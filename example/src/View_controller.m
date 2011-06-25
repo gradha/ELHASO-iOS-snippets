@@ -11,6 +11,11 @@
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
 #import "NSString+ELHASO.h"
+#import "UIImage+ELHASO.h"
+#import "UIImageView+ELHASO.h"
+
+
+#define LOGO_FILENAME		@"electric_hands_software_hand_logo.jpg"
 
 @implementation View_controller
 
@@ -61,6 +66,23 @@
 	}
 }
 
+- (void)run_image_tests
+{
+	UIImageView *logo = [UIImageView imageNamed:LOGO_FILENAME];
+	RASSERT(logo, @"Didn't load UIImageView!", return);
+	LOG(@"UIImageView with %@", logo.image);
+
+	CGSize size = CGSizeMake(30, 30);
+	UIImage *smaller = [logo.image scale_to:size proportional:YES];
+	LOG(@"Smaller logo scaled to %0.0fx%0.0f",
+		smaller.size.width, smaller.size.height);
+
+	size = CGSizeMake(300, 90);
+	UIImage *bigger = [logo.image scale_to:size proportional:YES];
+	LOG(@"Bigger logo scaled to %0.0fx%0.0f",
+		bigger.size.width, bigger.size.height);
+}
+
 - (void)run_tests
 {
 	LOG(@"Running the test suite...");
@@ -73,6 +95,7 @@
 
 	[self run_nsarray_tests];
 	[self run_nsstring_tests];
+	[self run_image_tests];
 
 	[doing stopAnimating];
 	LOG(@"Finished all tests!");
@@ -81,3 +104,5 @@
 }
 
 @end
+
+// vim:tabstop=4 shiftwidth=4 syntax=objc

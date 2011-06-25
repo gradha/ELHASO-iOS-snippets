@@ -20,3 +20,5 @@
 @property (nonatomic, retain) IBOutlet View_controller *viewController;
 
 @end
+
+// vim:tabstop=4 shiftwidth=4 syntax=objc
