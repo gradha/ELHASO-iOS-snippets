@@ -6,7 +6,7 @@
 //  Copyright 2011 Electric Hands Software. All rights reserved.
 //
 
-#import "ExampleViewController.h"
+#import "View_controller.h"
 
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"

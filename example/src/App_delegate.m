@@ -6,8 +6,8 @@
 //  Copyright 2011 Electric Hands Software. All rights reserved.
 //
 
-#import "ExampleAppDelegate.h"
-#import "ExampleViewController.h"
+#import "App_delegate.h"
+#import "View_controller.h"
 
 @implementation ExampleAppDelegate
 
