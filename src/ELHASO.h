@@ -55,6 +55,21 @@
 /// Transforms radians to degrees. You need to import math.h.
 #define RAD2DEG(X)              ((X) * 180 / M_PI)
 
+/// Maximum distance for objects, bigger than earth's diameter.
+#define MAX_DISTANCE		(20000 * 1000)
+
+/// Handy shortcut for all flexible margins in a view's autoresizingMask.
+#define FLEXIBLE_MARGINS \
+	(UIViewAutoresizingFlexibleTopMargin | \
+	UIViewAutoresizingFlexibleBottomMargin | \
+	UIViewAutoresizingFlexibleLeftMargin | \
+	UIViewAutoresizingFlexibleRightMargin)
+
+/// Handy shortcut for flexible size in a view's autoresizingMask.
+#define FLEXIBLE_SIZE \
+	(UIViewAutoresizingFlexibleHeight | \
+	UIViewAutoresizingFlexibleWidth)
+
 
 #endif // __MACRO_H__
 

@@ -1,6 +1,6 @@
-#import "categories/UILabel+ELHASO.h"
+#import "UILabel+ELHASO.h"
 
-#import "constants.h"
+#import "ELHASO.h"
 
 #import <QuartzCore/CALayer.h>
 

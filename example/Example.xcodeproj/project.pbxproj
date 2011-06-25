@@ -16,6 +16,7 @@
 		D51988C113B6877700197DDC /* electric_hands_software_hand_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D51988C013B6877700197DDC /* electric_hands_software_hand_logo.jpg */; };
 		D51988C213B6886100197DDC /* UIImageView+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8713AEA596001EEACC /* UIImageView+ELHASO.m */; };
 		D51988E613B68A2100197DDC /* UIImage+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8513AEA596001EEACC /* UIImage+ELHASO.m */; };
+		D519890113B68CA400197DDC /* UILabel+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8913AEA596001EEACC /* UILabel+ELHASO.m */; };
 		D5330A3713B669C3003BE0FD /* App_delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3013B669C3003BE0FD /* App_delegate.m */; };
 		D5330A3913B669C3003BE0FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3413B669C3003BE0FD /* main.m */; };
 		D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3613B669C3003BE0FD /* View_controller.m */; };
@@ -230,6 +231,7 @@
 				D51988B013B685DA00197DDC /* NSString+ELHASO.m in Sources */,
 				D51988C213B6886100197DDC /* UIImageView+ELHASO.m in Sources */,
 				D51988E613B68A2100197DDC /* UIImage+ELHASO.m in Sources */,
+				D519890113B68CA400197DDC /* UILabel+ELHASO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

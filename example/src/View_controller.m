@@ -13,6 +13,7 @@
 #import "NSString+ELHASO.h"
 #import "UIImage+ELHASO.h"
 #import "UIImageView+ELHASO.h"
+#import "UILabel+ELHASO.h"
 
 
 #define LOGO_FILENAME		@"electric_hands_software_hand_logo.jpg"
@@ -83,6 +84,14 @@
 		bigger.size.width, bigger.size.height);
 }
 
+- (void)run_label_tests
+{
+	UIView *round = [UILabel round_text:@"Test"
+		bounds:CGRectMake(0, 0, 100, 100) fit:YES radius:10];
+	LOG(@"You might not have noticed, but I just created a rounded label!");
+	LOG(@"%@", ASK_GETTER(round, recursiveDescription, nil));
+}
+
 - (void)run_tests
 {
 	LOG(@"Running the test suite...");
@@ -96,6 +105,7 @@
 	[self run_nsarray_tests];
 	[self run_nsstring_tests];
 	[self run_image_tests];
+	[self run_label_tests];
 
 	[doing stopAnimating];
 	LOG(@"Finished all tests!");
