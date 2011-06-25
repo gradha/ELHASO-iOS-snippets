@@ -12,6 +12,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		D5173C8D13AEA596001EEACC /* NSArray+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */; };
 		D519887E13B66BF500197DDC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D519887D13B66BF500197DDC /* MainWindow.xib */; };
+		D51988B013B685DA00197DDC /* NSString+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8313AEA596001EEACC /* NSString+ELHASO.m */; };
 		D5330A3713B669C3003BE0FD /* App_delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3013B669C3003BE0FD /* App_delegate.m */; };
 		D5330A3913B669C3003BE0FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3413B669C3003BE0FD /* main.m */; };
 		D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3613B669C3003BE0FD /* View_controller.m */; };
@@ -220,6 +221,7 @@
 				D5330A3713B669C3003BE0FD /* App_delegate.m in Sources */,
 				D5330A3913B669C3003BE0FD /* main.m in Sources */,
 				D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */,
+				D51988B013B685DA00197DDC /* NSString+ELHASO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

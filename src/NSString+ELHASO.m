@@ -1,4 +1,4 @@
-#import "categories/NSString+ELHASO.h"
+#import "NSString+ELHASO.h"
 
 @implementation NSString (ELHASO)
 

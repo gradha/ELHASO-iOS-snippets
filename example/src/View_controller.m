@@ -10,6 +10,7 @@
 
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
+#import "NSString+ELHASO.h"
 
 @implementation View_controller
 
@@ -39,23 +40,43 @@
 	[self performSelector:@selector(run_tests) withObject:nil afterDelay:0];
 }
 
+- (void)run_nsarray_tests
+{
+	NSArray *t1 = [NSArray arrayWithObject:@"Test"];
+	LOG(@"Getting first entry of NSArray '%@'", [t1 get:0]);
+	LOG(@"Getting out of bonds entry of NSArray '%@'", [t1 get:1]);
+	LOG(@"Repeating with NON_NIL_STRING '%@'",
+		NON_NIL_STRING([t1 get:1]));
+}
+
+- (void)run_nsstring_tests
+{
+	NSArray *strings = [NSArray arrayWithObjects:@"http://elhaso.com/blah",
+		@"http://elhaso.com/subhunt/index.en.html", @"../i/logo.png", nil];
+
+	for (NSString *url in strings) {
+		LOG(@"Url '%@'", url);
+		LOG(@"\tbase url: %@", [url stringByRemovingFragment]);
+		LOG(@"\tis relative? %@", [url isRelativeURL] ? @"Yes" : @"No");
+	}
+}
+
 - (void)run_tests
 {
 	LOG(@"Running the test suite...");
 
-	// Testing log macros.
+	// Testing some macros.
 	DLOG(@"This message only seen if you are on your DEBUG build");
 	LOG(@"This message seen always, did you see the previous DEBUG one?");
+	LOG(@"Now we show a nil '%@' and a non-nil '%@' string.",
+		nil, NON_NIL_STRING(nil));
 
-	// Testing NON_NIL_STRING and NSArray getter.
-	NSArray *t1 = [NSArray arrayWithObject:@"Test"];
-	LOG(@"Getting first entry of NSArray '%@'", [t1 get:0]);
-	LOG(@"Getting bad entry of NSArray '%@'", [t1 get:1]);
-	LOG(@"Repeating with NON_NIL_STRING '%@'",
-		NON_NIL_STRING([t1 get:1]));
+	[self run_nsarray_tests];
+	[self run_nsstring_tests];
 
 	[doing stopAnimating];
-	self.label.text = @"Did run all!";
+	LOG(@"Finished all tests!");
+	self.label.text = @"Did run all, check the log!";
 	is_running = NO;
 }
 
