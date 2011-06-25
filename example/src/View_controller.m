@@ -11,7 +11,7 @@
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
 
-@implementation ExampleViewController
+@implementation View_controller
 
 @synthesize label;
 @synthesize doing;

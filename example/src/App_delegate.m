@@ -9,7 +9,7 @@
 #import "App_delegate.h"
 #import "View_controller.h"
 
-@implementation ExampleAppDelegate
+@implementation App_delegate
 
 @synthesize window;
 @synthesize viewController;

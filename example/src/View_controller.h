@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExampleViewController : UIViewController
+@interface View_controller : UIViewController
 {
 	BOOL is_running;
 }

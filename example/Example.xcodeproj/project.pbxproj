@@ -10,8 +10,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		D5173C8D13AEA596001EEACC /* NSArray+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */; };
+		D519887E13B66BF500197DDC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D519887D13B66BF500197DDC /* MainWindow.xib */; };
 		D5330A3713B669C3003BE0FD /* App_delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3013B669C3003BE0FD /* App_delegate.m */; };
 		D5330A3913B669C3003BE0FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3413B669C3003BE0FD /* main.m */; };
 		D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3613B669C3003BE0FD /* View_controller.m */; };
@@ -22,7 +22,6 @@
 		1D6058910D05DD3D006BFB54 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D5173C7B13AEA596001EEACC /* CLLocation+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+ELHASO.h"; sourceTree = "<group>"; };
 		D5173C7C13AEA596001EEACC /* CLLocation+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+ELHASO.m"; sourceTree = "<group>"; };
 		D5173C7D13AEA596001EEACC /* ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELHASO.h; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		D5173C8913AEA596001EEACC /* UILabel+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ELHASO.m"; sourceTree = "<group>"; };
 		D5173C8A13AEA596001EEACC /* UINavigationController+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ELHASO.h"; sourceTree = "<group>"; };
 		D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ELHASO.m"; sourceTree = "<group>"; };
+		D519887D13B66BF500197DDC /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		D5330A2F13B669C3003BE0FD /* App_delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App_delegate.h; sourceTree = "<group>"; };
 		D5330A3013B669C3003BE0FD /* App_delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App_delegate.m; sourceTree = "<group>"; };
 		D5330A3213B669C3003BE0FD /* Example-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Example-Info.plist"; sourceTree = "<group>"; };
@@ -75,20 +75,12 @@
 			isa = PBXGroup;
 			children = (
 				D5173C7813AEA553001EEACC /* external */,
+				D519887C13B66BF500197DDC /* resources */,
 				D5330A2E13B669C3003BE0FD /* src */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = CustomTemplate;
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -133,6 +125,14 @@
 			name = "ELHASO-iOS-snippets";
 			path = ../src;
 			sourceTree = SOURCE_ROOT;
+		};
+		D519887C13B66BF500197DDC /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				D519887D13B66BF500197DDC /* MainWindow.xib */,
+			);
+			path = resources;
+			sourceTree = "<group>";
 		};
 		D5330A2E13B669C3003BE0FD /* src */ = {
 			isa = PBXGroup;
@@ -205,7 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				D519887E13B66BF500197DDC /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
