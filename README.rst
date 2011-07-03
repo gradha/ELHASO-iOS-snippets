@@ -127,6 +127,12 @@ will provide doxygen docs at some point.
 License
 -------
 
+The file Base64+ELHASO.m and it's header file were taken from
+http://www.cocoadev.com/index.pl?BaseSixtyFour and are copyrighted by
+cyrus.najmabadi@gmail.com who put them in the public domain. The file is
+included for the get_image* methods from NSDictionary+ELHASO.m. You can remove
+this method and the Base64 code if you need to.
+
 Unless otherwise stated, all the source code in this repository is available
 under the MIT license (http://www.opensource.org/licenses/mit-license.php)
 meaning that you can take what you want and not give back. However, you might

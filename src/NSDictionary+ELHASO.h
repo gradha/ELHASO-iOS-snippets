@@ -18,7 +18,6 @@
 - (NSArray*)get_array:(NSString*)key of:(Class)type def:(NSArray*)def;
 - (CGSize)get_size:(NSString*)key def:(CGSize)def;
 - (UIColor*)get_color:(NSString*)key def:(UIColor*)def;
-- (void)setColor:(UIColor*)color forKey:(NSString*)key;
 
 @end
 

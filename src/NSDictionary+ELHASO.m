@@ -1,10 +1,10 @@
-#import "categories/NSDictionary+ELHASO.h"
+#import "NSDictionary+ELHASO.h"
 
-#import "FLLog.h"
-#import "macro.h"
+#import "Base64+ELHASO.h"
+#import "ELHASO.h"
 
-#import "Base64.h"
-#import "RRGlossCausticShader/UIColor+Components.h"
+#import <UIKit/UIKit.h>
+
 
 @implementation NSDictionary (ELHASO)
 
@@ -51,7 +51,7 @@
 		if ([int_object isKindOfClass:[NSDecimalNumber class]]) {
 			return [int_object doubleValue];
 		} else {
-			PLOG(@"Expecting int64 in JSON, got %@ '%@'",
+			DLOG(@"Expecting int64 in JSON, got %@ '%@'",
 				[int_object class], int_object);
 			return def;
 		}
@@ -70,7 +70,7 @@
 		if ([int_object isKindOfClass:[NSNumber class]]) {
 			return [int_object intValue];
 		} else {
-			PLOG(@"Expecting int in JSON, got %@ '%@'",
+			DLOG(@"Expecting int in JSON, got %@ '%@'",
 				[int_object class], int_object);
 			return def;
 		}
@@ -89,7 +89,7 @@
 		if ([float_object isKindOfClass:[NSNumber class]]) {
 			return [float_object floatValue];
 		} else {
-			PLOG(@"Expecting float in JSON, got %@ '%@'",
+			DLOG(@"Expecting float in JSON, got %@ '%@'",
 				[float_object class], float_object);
 			return def;
 		}
@@ -109,7 +109,7 @@
 		if ([double_object isKindOfClass:[NSNumber class]]) {
 			return [double_object doubleValue];
 		} else {
-			PLOG(@"Expecting double in JSON, got %@ '%@'",
+			DLOG(@"Expecting double in JSON, got %@ '%@'",
 				[double_object class], double_object);
 			return def;
 		}
@@ -129,7 +129,7 @@
 		if ([int_object isKindOfClass:[NSNumber class]]) {
 			return [int_object boolValue];
 		} else {
-			PLOG(@"Expecting bool in JSON, got %@ '%@'",
+			DLOG(@"Expecting bool in JSON, got %@ '%@'",
 				[int_object class], int_object);
 			return def;
 		}
@@ -149,7 +149,7 @@
 		if ([str_object isKindOfClass:[NSString class]]) {
 			return str_object;
 		} else {
-			PLOG(@"Expecting string in JSON, got %@ '%@'",
+			DLOG(@"Expecting string in JSON, got %@ '%@'",
 				[str_object class], str_object);
 			return def;
 		}
@@ -172,7 +172,7 @@
 		if ([dict_object isKindOfClass:[NSDictionary class]]) {
 			return dict_object;
 		} else {
-			PLOG(@"Expecting dictionary in JSON, got %@ '%@'",
+			DLOG(@"Expecting dictionary in JSON, got %@ '%@'",
 				[dict_object class], dict_object);
 			return def;
 		}
@@ -195,7 +195,7 @@
 		if ([array_object isKindOfClass:[NSArray class]]) {
 			return array_object;
 		} else {
-			PLOG(@"Expecting array in JSON, got %@ '%@'",
+			DLOG(@"Expecting array in JSON, got %@ '%@'",
 				[array_object class], array_object);
 			return def;
 		}
@@ -232,7 +232,7 @@
 	int f = 0;
 	for (id tester in ret) {
 		if (![tester isKindOfClass:type]) {
-			PLOG(@"Got array in JSON, but element at position "
+			DLOG(@"Got array in JSON, but element at position "
 				@"%d was expected to be of type %@ and was %@ instead.\nThe "
 				@"array was:%@", f, type, [tester class], ret);
 			return def;
@@ -264,10 +264,13 @@
 	return box;
 }
 
-/** Returns a color from the dictionary.
- * If the object is not found, returns the default value.
+/** Returns a color (as array of three RGB integers) from the dictionary.
+ * If the array is not found or doesn't have three numeric components which can
+ * be expressed as a float value between 0 and 255 inclusive, the default value
+ * will be returned. The function doesn't do clamping, so you could have 300 as
+ * component in the JSON and... who knows.
  */
-- (UIColor*)get_color:(NSString*)key def:(UIColor*)def;
+- (UIColor*)get_color:(NSString*)key def:(UIColor*)def
 {
 	id object = [self objectForKey:key];
 	if (![object isKindOfClass:[NSArray class]])
@@ -286,23 +289,6 @@
 
 	return [UIColor colorWithRed:[v1 floatValue] / 255.0f
 		green:[v2 floatValue] / 255.0f blue:[v3 floatValue] / 255.0f alpha:1];
-}
-
-/** Stores an UIColor in the dictionary as array of three RGB integers.
- * You can pass nil, which avoids storing anything.
- */
-- (void)setColor:(UIColor*)color forKey:(NSString*)key
-{
-	if (!color)
-		return;
-
-	const int r = [color red] * 255;
-	const int g = [color green] * 255;
-	const int b = [color blue] * 255;
-	NSNumber *red = [NSNumber numberWithInt:MID(0, r, 255)];
-	NSNumber *green = [NSNumber numberWithInt:MID(0, g, 255)];
-	NSNumber *blue = [NSNumber numberWithInt:MID(0, b, 255)];
-	[self setValue:[NSArray arrayWithObjects:red, green, blue, nil] forKey:key];
 }
 
 @end

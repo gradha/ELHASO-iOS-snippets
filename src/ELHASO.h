@@ -9,13 +9,13 @@
 
 /// Log only if the symbol DEBUG is defined.
 #ifdef DEBUG
-#define DLOG(X, ...)		NSLog(X, ##__VA_ARGS__)
+#define DLOG(...)			NSLog(__VA_ARGS__)
 #else
-#define DLOG(X, ...)		do {} while (0)
+#define DLOG(...)			do {} while (0)
 #endif // DEBUG
 
 /// Log always, avoid stupid CamelCase.
-#define LOG(X, ...)			NSLog(X, ##__VA_ARGS__)
+#define LOG(...)			NSLog(__VA_ARGS__)
 
 /// Verifies if the mask value VAL is set in the variable.
 #define IS_BIT(VAR,VAL)		((VAR) & (VAL))

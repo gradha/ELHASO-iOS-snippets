@@ -22,6 +22,8 @@
 		D5330A3713B669C3003BE0FD /* App_delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3013B669C3003BE0FD /* App_delegate.m */; };
 		D5330A3913B669C3003BE0FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3413B669C3003BE0FD /* main.m */; };
 		D5330A3A13B669C3003BE0FD /* View_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5330A3613B669C3003BE0FD /* View_controller.m */; };
+		D5683FB113C0C574008DE83C /* NSDictionary+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8113AEA596001EEACC /* NSDictionary+ELHASO.m */; };
+		D568401B13C0CF76008DE83C /* Base64+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D568401A13C0CF76008DE83C /* Base64+ELHASO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		D5330A3413B669C3003BE0FD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D5330A3513B669C3003BE0FD /* View_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View_controller.h; sourceTree = "<group>"; };
 		D5330A3613B669C3003BE0FD /* View_controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View_controller.m; sourceTree = "<group>"; };
+		D568401913C0CF76008DE83C /* Base64+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base64+ELHASO.h"; sourceTree = "<group>"; };
+		D568401A13C0CF76008DE83C /* Base64+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Base64+ELHASO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		D5173C7A13AEA596001EEACC /* ELHASO-iOS-snippets */ = {
 			isa = PBXGroup;
 			children = (
+				D568401913C0CF76008DE83C /* Base64+ELHASO.h */,
+				D568401A13C0CF76008DE83C /* Base64+ELHASO.m */,
 				D5173C7B13AEA596001EEACC /* CLLocation+ELHASO.h */,
 				D5173C7C13AEA596001EEACC /* CLLocation+ELHASO.m */,
 				D5173C7D13AEA596001EEACC /* ELHASO.h */,
@@ -238,6 +244,8 @@
 				D51988E613B68A2100197DDC /* UIImage+ELHASO.m in Sources */,
 				D519890113B68CA400197DDC /* UILabel+ELHASO.m in Sources */,
 				D519893713B68F8100197DDC /* CLLocation+ELHASO.m in Sources */,
+				D5683FB113C0C574008DE83C /* NSDictionary+ELHASO.m in Sources */,
+				D568401B13C0CF76008DE83C /* Base64+ELHASO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +286,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_PEDANTIC = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../src;
 				PREBINDING = NO;
