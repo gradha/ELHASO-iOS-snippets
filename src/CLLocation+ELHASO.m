@@ -67,9 +67,10 @@
 }
 
 /** Returns the bearing to the specified location.
- * The returned bearing is in radians, with zero being north, PI/2
- * being east, PI being south, etc. If something goes wrong or the
- * specified location is nil, returns zero.
+ * The returned bearing is in radians, with zero being north, PI/2 being east,
+ * PI being south, etc. If something goes wrong or the specified location is
+ * nil, returns zero. Note that returning negative values is valid too, so
+ * -PI/2 would be west.
  *
  * Credit goes to Movable Type Scripts at
  * http://www.movable-type.co.uk/scripts/latlong.html for explanation

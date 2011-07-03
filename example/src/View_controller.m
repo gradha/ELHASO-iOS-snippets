@@ -3,10 +3,13 @@
 #import "CLLocation+ELHASO.h"
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
+#import "NSDictionary+ELHASO.h"
 #import "NSString+ELHASO.h"
 #import "UIImage+ELHASO.h"
 #import "UIImageView+ELHASO.h"
 #import "UILabel+ELHASO.h"
+
+#import <math.h>
 
 
 #define LOGO_FILENAME		@"electric_hands_software_hand_logo.jpg"
@@ -87,7 +90,97 @@
 
 - (void)run_location_tests
 {
-	LOG(@"You were doing this...");
+	CLLocation *madrid = [[CLLocation alloc]
+		initWithCoordinate:(CLLocationCoordinate2D){40.415291, -3.684266}
+		altitude:0 horizontalAccuracy:50 verticalAccuracy:0
+		timestamp:[NSDate date]];
+
+	CLLocation *bilbao = [[CLLocation alloc]
+		initWithCoordinate:(CLLocationCoordinate2D){43.263023, -2.935055}
+		altitude:0 horizontalAccuracy:500 verticalAccuracy:0
+		timestamp:[NSDate date]];
+
+	LOG(@"Distance between Madrid and Bilbao: %0.1fkm",
+		[madrid distance_to:bilbao do_round:YES] / 1000.0);
+	LOG(@"Bearing from Madrid to Bilbao: %0.6f rad, %0.1f degrees",
+		[madrid bearing_to:bilbao], RAD2DEG([madrid bearing_to:bilbao]));
+	LOG(@"Bearing from Bilbao to Madrid: %0.6f rad, %0.1f degrees",
+		[bilbao bearing_to:madrid], RAD2DEG([bilbao bearing_to:madrid]));
+
+	[madrid release];
+	[bilbao release];
+}
+
+- (void)run_dictionary_tests
+{
+	// Presume the following dictionary is the result of JSON parsing action...
+	// ...and pretend these are no the ugly macros you are searching for.
+#define NUM(X)		[NSNumber numberWithInt:X]
+#define ARRAY(...)	[NSArray arrayWithObjects:__VA_ARGS__]
+#define DICT(...)	[NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__]
+
+	NSDictionary *data = DICT(
+		ARRAY(NUM(255), NUM(0), NUM(0), nil), @"red_color",
+		ARRAY(NUM(128), NUM(128), nil), @"rect_size",
+		ARRAY(NUM(1), NUM(2), NUM(3), NUM(4), NUM(5), nil), @"valid_int_array",
+		ARRAY(NUM(1), @"Saboteur!", NUM(3), nil), @"invalid_array",
+		DICT(@"value", @"a string", NUM(4), @"a number", nil), @"dictionary",
+		@"Visit http://elhaso.com/ please!", @"just a lame ad",
+		[NSNumber numberWithBool:false], @"true_story_bro",
+		[NSNumber numberWithDouble:M_PI], @"pi_double",
+		[NSNumber numberWithFloat:M_PI], @"pi_float",
+		[NSDecimalNumber
+			decimalNumberWithString:@"1152921504606846976"], @"long_long",
+@"iVBORw0KGgoAAAANSUhEUgAAABkAAAAcCAIAAAAbRoOHAAAAB3RJTUUH2wcDFgU4WWamqwAAAAlw"
+@"SFlzAAAK8AAACvABQqw0mAAABEtJREFUSMeNVdtv21QYz//BI7wgECpau2Zt3bVNCg8r2iXQLSvr"
+@"ZckmNMQQgz0M9gI8FFGtXNY9TGhcBg8DmjRpnG4dIUioYkt6iWOn6dZuvWwdbUeJ7WPHSRxfOOfY"
+@"dbOSBGzn+OTz59/3+6626VUPkf4BTA2puq5qOlrgAW/w1Moo26wdVtva4xMemfAJMOLOrTMaQkMa"
+@"4r0xrYJhW+mfogz4qUu5x9QWlM7d6gcBt7xBYzq6QF/l/Yeyi1HTYhUsaY0Gfhf36zl1S5JNDwP/"
+@"kYK4YYDzkfeEwOvSRvK/eUEIlvRmgt2WJPdngh0+qGlF6B7iFb+YGe3WrEhUwULhWCB5n0suSoak"
+@"IK5lfnbhrYKe3gmCyYv/K17YeJH1HSps3jMkslLI+DotDtLiuLR4UyvDCWMZ6UOrhsFgUG59mluO"
+@"Wkz/HumytLP3b+RXYxV5qUpeSPvgiqrGML46IU1ftjQ2/UetaIqzP0kPJipiCUtRYfiAwFy1NJR8"
+@"bjPcZ2n8ZcYLcWYnPsrOBw0fzXo0HUY3m5zPsAE3G/KUJgemMs/OQyLFgsD+eFBVFfimIgPO3ylM"
+@"XbKs4j5QFUXV4KkqNvhAehTjfK7cWsxCE/7o56LvozxuprmR14SliCyusjdO8aSHi563TCIA6Pj8"
+@"AhuLy1bsc4+ZTLBX02RFQ7nPUldguYP0teztCzx5HAS7uZGjgDwO9zy2YUZD05JHjiVq7PGnnl75"
+@"6lubEQroTm5lgiNPKoqEW/o7EOoDwS4+1MuHTwLSywe7QdiLhNNDlo9zp88mX6hNunv4yRnFqK+t"
+@"5tPBL+9yYQ+YHwXjb/Jhj0B6AVxHe7nfPywsR/lQNx90S7gmoO08EOPPPLtxPWJ6rKq20nYQV8aF"
+@"0T4QwhRID+JC9rI330YvazLrezUTecfSf3Tl66X+C0ZtGqX55JwoyGzgMPIo7GXH3sjOXOZCHjir"
+@"qA6XnC/ysQFFEpke73pwTNWVyed2iw9XlfI9hLlx42fYsJcPdBYVXlz5TdXlxL79TJNj4a0zhbwy"
+@"Y29NNRIPPhmk2l+ZrG80q67SnBBjg1ywK3c/Emt9uZhXqY4DqSYH3exMNrRSjW3M3naGaKfsBN3s"
+@"mD3m2S7VsnNCSF8TYv30vsNMszNhJ2YJJ0MgLJpwQAneoytlb1kc+Lw0b2V45TfjTI+bbmpLGRDN"
+@"DoaAq5PBF43hoCTxfB0/d6fyzMFDHjBpqqYev2xQcJpY5ookVG3D3XPn/z0Od/ISlldmXrTP4hgx"
+@"JZcFl9y15+7psxhm59doxyxEYyfRAqPjNOICN9uIUFjbuPDBx+bU0J4I1g4fzfw+/OZ7ZlejQYTB"
+@"8WIM6IbWuROntgdnte9jif+wY6k6giHaTNdwNhO79xZ3fD6rzHvd6ghdXxz8Yrqmjq4naKINsqNq"
+@"7OvkdU2vMOrLYmlbUx/+ilJu+cuhVIdruuWlpYHPjCFTBesfGMH49PssFWoAAAAASUVORK5CYII=",
+		@"png_image", nil);
+
+	LOG(@"Going to test dictionary accessors with %@", data);
+	LOG(@"The red color is: %@", [data get_color:@"red_color" def:nil]);
+
+	LOG(@"Converted a pair of ints to size %@",
+		NSStringFromCGSize([data get_size:@"rect_size" def:CGSizeZero]));
+
+	LOG(@"Get an array of ints: %@",
+		[data get_array:@"valid_int_array" of:[NSNumber class] def:nil]);
+
+	LOG(@"We fail to get a validated array of heterogenous objects: %@",
+		[data get_array:@"invalid_array" of:[NSNumber class] def:nil]);
+
+	LOG(@"But we can get it without type checks: %@",
+		[data get_array:@"invalid_array" def:nil]);
+
+	LOG(@"Oh, a shiny dictionary! %@", [data get_dict:@"dictionary" def:nil]);
+
+	LOG(@"Spam in your log strings! %@",
+		[data get_string:@"just a lame ad" def:nil]);
+
+	LOG(@"Wasn't that a shameless plug? %@",
+		[data get_bool:@"true_story_bro" def:true] ? @"YES" : @"NO");
+
+	LOG(@"This is our double: %0.15f", [data get_double:@"pi_double" def:0]);
+	LOG(@"This is our float: %f", [data get_double:@"pi_float" def:0]);
+	LOG(@"This is our int64: %lld", [data get_int64:@"long_long" def:0]);
+	LOG(@"Embedded image: %@", [data get_image:@"png_image" def:nil]);
 }
 
 - (void)run_tests
@@ -105,6 +198,7 @@
 	[self run_image_tests];
 	[self run_label_tests];
 	[self run_location_tests];
+	[self run_dictionary_tests];
 
 	[doing stopAnimating];
 	LOG(@"Finished all tests!");
