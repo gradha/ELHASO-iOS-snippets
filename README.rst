@@ -117,6 +117,16 @@ like DLOG or RASSERT may not do what you expect them to do. Feel free to leave
 other of your macros or add your own.
 
 
+Framework dependencies
+**********************
+
+Your application needs to link against the UIKit framework (which probably
+already does). If you want to use the CLLocation categories, you will have to
+also link against the CoreLocation framework, or you will get link errors. If
+you don't want to use CoreLocation, simply uncheck in XCode the inclusion of
+the ``CLLocation+ELHASO.*`` files for your target build target.
+
+
 Documentation
 -------------
 
