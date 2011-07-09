@@ -1,5 +1,7 @@
 #import "View_controller.h"
 
+#import "Root_table_controller.h"
+
 #import "CLLocation+ELHASO.h"
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
@@ -40,6 +42,14 @@
 	[doing startAnimating];
 	self.label.text = @"";
 	[self performSelector:@selector(run_tests) withObject:nil afterDelay:0];
+}
+
+- (void)push_table
+{
+	LOG(@"Pushing further tests...");
+	UITableViewController *c = [Root_table_controller new];
+	[self.navigationController pushViewController:c animated:YES];
+	[c release];
 }
 
 - (void)run_nsarray_tests

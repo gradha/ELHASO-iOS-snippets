@@ -9,6 +9,7 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *doing;
 
 - (IBAction)start_tests;
+- (IBAction)push_table;
 
 @end
 
