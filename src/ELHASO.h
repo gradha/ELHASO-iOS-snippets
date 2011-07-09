@@ -1,5 +1,5 @@
-#ifndef __MACRO_H__
-#define __MACRO_H__
+#ifndef __ELHASO_MACRO_H__
+#define __ELHASO_MACRO_H__
 
 /// Returns the value var restrained to inclusive lower and higher limits.
 #define MID(low,var,high)  (MIN(MAX(low, var), high))
@@ -71,6 +71,6 @@
 	UIViewAutoresizingFlexibleWidth)
 
 
-#endif // __MACRO_H__
+#endif // __ELHASO_MACRO_H__
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc
