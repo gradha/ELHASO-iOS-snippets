@@ -29,6 +29,39 @@
 	return ([[check_url host] length] < 1);
 }
 
+/** Returns the url encoded version of string.
+ * Kudos to darronschall at
+ * http://stackoverflow.com/questions/4814558/how-to-encode-an-url/4818363#4818363
+ */
+- (NSString*)urlEncode
+{
+	NSString *encodedString =
+		(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+			(CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+			kCFStringEncodingUTF8);
+	return [encodedString autorelease];
+}
+
+/** Wrapper over urlEncode to parse multiple parameters.
+ * This function will first split the string using whitespace, encode each
+ * fragment and return them joined by plus signs, ideal for a google like URL
+ * request. If your input doesn't have whitespace, this is the same as calling
+ * urlEncode directly.
+ */
+- (NSString*)split_and_encode
+{
+	NSArray *parts = [self componentsSeparatedByCharactersInSet:
+		[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+	if (parts.count < 2)
+		return [self urlEncode];
+
+	NSMutableArray *converted = [NSMutableArray arrayWithCapacity:parts.count];
+	for (NSString *part in parts)
+		[converted addObject:[part urlEncode]];
+	return [converted componentsJoinedByString:@"+"];
+}
+
 @end
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc

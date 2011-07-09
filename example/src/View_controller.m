@@ -71,6 +71,12 @@
 		LOG(@"\tbase url: %@", [url stringByRemovingFragment]);
 		LOG(@"\tis relative? %@", [url isRelativeURL] ? @"Yes" : @"No");
 	}
+
+	NSString *base_search = @"http://www.google.com/search?q=";
+	NSString *user_input = @"Electric Hands Software Submarine Hunt";
+	LOG(@"With the base url %@ and params '%@'...", base_search, user_input);
+	LOG(@"...we will request %@", [NSString stringWithFormat:@"%@%@",
+		base_search, [user_input split_and_encode]]);
 }
 
 - (void)run_image_tests

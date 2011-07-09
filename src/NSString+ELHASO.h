@@ -7,6 +7,8 @@
 
 - (NSString*)stringByRemovingFragment;
 - (BOOL)isRelativeURL;
+- (NSString*)urlEncode;
+- (NSString*)split_and_encode;
 
 @end
 

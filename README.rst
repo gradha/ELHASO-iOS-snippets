@@ -121,7 +121,11 @@ Documentation
 -------------
 
 At the moment the documentation is embedded in comments in the source code. I
-will provide doxygen docs at some point.
+will provide doxygen docs at some point. Included in the source code tree there
+is an example which tests all the functions provided by the numerous categories
+included. You can treat this as working documentation. Check the
+``run_*_tests`` methods of ``example/src/View_controller.m`` and the output
+they generate in the debug log.
 
 
 License
