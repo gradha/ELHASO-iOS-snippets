@@ -25,6 +25,7 @@
 		D5683FB113C0C574008DE83C /* NSDictionary+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8113AEA596001EEACC /* NSDictionary+ELHASO.m */; };
 		D568401B13C0CF76008DE83C /* Base64+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D568401A13C0CF76008DE83C /* Base64+ELHASO.m */; };
 		D5B3DC9F13C8AA970021B65D /* Root_table_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B3DC9E13C8AA970021B65D /* Root_table_controller.m */; };
+		D5B3DDAF13C8B7590021B65D /* UINavigationController+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,6 +253,7 @@
 				D5683FB113C0C574008DE83C /* NSDictionary+ELHASO.m in Sources */,
 				D568401B13C0CF76008DE83C /* Base64+ELHASO.m in Sources */,
 				D5B3DC9F13C8AA970021B65D /* Root_table_controller.m in Sources */,
+				D5B3DDAF13C8B7590021B65D /* UINavigationController+ELHASO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
