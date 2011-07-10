@@ -110,7 +110,7 @@ listbox you are on either **Debug** or **Release**. Define the following
 macros:
 
 * For Debug settings: **DEBUG**
-* For Release settings: **NDEBUG** and **RELEASE**
+* For Release settings: **NDEBUG**, **NS_BLOCK_ASSERTIONS** and **RELEASE**
 
 If you don't define these preprocessor macros for your projects handy macros
 like DLOG or RASSERT may not do what you expect them to do. Feel free to leave
