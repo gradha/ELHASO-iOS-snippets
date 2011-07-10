@@ -199,6 +199,16 @@
 	LOG(@"Embedded image: %@", [data get_image:@"png_image" def:nil]);
 }
 
+- (void)run_misc_tests
+{
+	LOG(@"Running misc tests...");
+	NSString *png = @"electric_hands_software_hand_logo.jpg";
+	LOG(@"Let's build hypothetical paths to the file %@", png);
+	LOG(@"Bundle: %@", get_path(png, DIR_BUNDLE));
+	LOG(@"Docs: %@", get_path(png, DIR_DOCS));
+	LOG(@"Cache: %@", get_path(png, DIR_CACHE));
+}
+
 - (void)run_tests
 {
 	LOG(@"Running the test suite...");
@@ -215,6 +225,7 @@
 	[self run_label_tests];
 	[self run_location_tests];
 	[self run_dictionary_tests];
+	[self run_misc_tests];
 
 	[doing stopAnimating];
 	LOG(@"Finished all tests!");

@@ -1,6 +1,8 @@
 #ifndef __ELHASO_MACRO_H__
 #define __ELHASO_MACRO_H__
 
+#import "ELHASO-types.h"
+
 /// Returns the value var restrained to inclusive lower and higher limits.
 #define MID(low,var,high)  (MIN(MAX(low, var), high))
 
@@ -70,6 +72,10 @@
 	(UIViewAutoresizingFlexibleHeight | \
 	UIViewAutoresizingFlexibleWidth)
 
+
+/// Prototypes of some miscelaneous C functions.
+NSString *get_path(NSString *filename, DIR_TYPE dir_type);
+void swizzle(Class c, SEL orig, SEL new);
 
 #endif // __ELHASO_MACRO_H__
 
