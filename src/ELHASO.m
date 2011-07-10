@@ -86,4 +86,23 @@ void swizzle(Class c, SEL orig, SEL new)
 	}
 }
 
+/** Simulates a memory warning when running under the simulator.
+ * This doesn't work on non simulator environments. Idea taken from
+ * http://idevrecipes.com/2011/05/04/debugging-magic-auto-simulate-memory-warnings/
+ * \return Returns nonzero if the simulated memory warning was posisble.
+ */
+int simulate_memory_warning(void)
+{
+#if TARGET_IPHONE_SIMULATOR
+#ifdef DEBUG
+	CFNotificationCenterPostNotification(
+		CFNotificationCenterGetDarwinNotifyCenter(),
+		(CFStringRef)@"UISimulatedMemoryWarningNotification",
+		NULL, NULL, true);
+	return 1;
+#endif
+#endif
+	return 0;
+}
+
 // vim:tabstop=4 shiftwidth=4 syntax=objc

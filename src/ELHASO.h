@@ -76,6 +76,7 @@
 /// Prototypes of some miscelaneous C functions.
 NSString *get_path(NSString *filename, DIR_TYPE dir_type);
 void swizzle(Class c, SEL orig, SEL new);
+int simulate_memory_warning(void);
 
 #endif // __ELHASO_MACRO_H__
 

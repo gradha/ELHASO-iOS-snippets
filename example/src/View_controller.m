@@ -208,6 +208,8 @@
 	LOG(@"Docs: %@", get_path(png, DIR_DOCS));
 	LOG(@"Cache: %@", get_path(png, DIR_CACHE));
 	LOG(@"Lib: %@", get_path(png, DIR_LIB));
+	LOG(@"Running simulated memory warning... %@",
+		simulate_memory_warning() ? @"YES" : @"NO");
 }
 
 - (void)run_tests

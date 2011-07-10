@@ -32,6 +32,14 @@ NSArray *_options;
 	[super dealloc];
 }
 
+/** Hook to simulate memory warnings after we are visible.
+ */
+- (void) viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	simulate_memory_warning();
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
 	cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
