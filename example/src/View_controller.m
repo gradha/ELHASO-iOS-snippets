@@ -207,6 +207,7 @@
 	LOG(@"Bundle: %@", get_path(png, DIR_BUNDLE));
 	LOG(@"Docs: %@", get_path(png, DIR_DOCS));
 	LOG(@"Cache: %@", get_path(png, DIR_CACHE));
+	LOG(@"Lib: %@", get_path(png, DIR_LIB));
 }
 
 - (void)run_tests

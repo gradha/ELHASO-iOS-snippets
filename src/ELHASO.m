@@ -1,5 +1,7 @@
 #import "ELHASO.H"
 
+#import "NSArray+ELHASO.h"
+
 #import <assert.h>
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -29,7 +31,7 @@ NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 		{
 			NSArray *paths = NSSearchPathForDirectoriesInDomains(
 				NSDocumentDirectory, NSUserDomainMask, YES);
-			NSString *documentsDirectory = [paths objectAtIndex:0];
+			NSString *documentsDirectory = [paths get:0];
 			path = [documentsDirectory stringByAppendingPathComponent:filename];
 			dir_name = @"doc directory";
 			break;
@@ -39,9 +41,19 @@ NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 		{
 			NSArray *paths = NSSearchPathForDirectoriesInDomains(
 				NSCachesDirectory, NSUserDomainMask, YES);
-			NSString *documentsDirectory = [paths objectAtIndex:0];
+			NSString *documentsDirectory = [paths get:0];
 			path = [documentsDirectory stringByAppendingPathComponent:filename];
 			dir_name = @"cache directory";
+			break;
+		}
+
+		case DIR_LIB:
+		{
+			NSArray *paths = NSSearchPathForDirectoriesInDomains(
+					NSLibraryDirectory, NSUserDomainMask, YES);
+			NSString *documentsDirectory = [paths get:0];
+			path = [documentsDirectory stringByAppendingPathComponent:filename];
+			dir_name = @"lib directory";
 			break;
 		}
 
