@@ -6,6 +6,7 @@
 #import "ELHASO.h"
 #import "NSArray+ELHASO.h"
 #import "NSDictionary+ELHASO.h"
+#import "NSObject+ELHASO.h"
 #import "NSString+ELHASO.h"
 #import "UIImage+ELHASO.h"
 #import "UIImageView+ELHASO.h"
@@ -15,6 +16,14 @@
 
 
 #define LOGO_FILENAME		@"electric_hands_software_hand_logo.jpg"
+
+
+@interface View_controller ()
+
+- (void)run_tests;
+
+@end
+
 
 @implementation View_controller
 
@@ -41,7 +50,9 @@
 	is_running = YES;
 	[doing startAnimating];
 	self.label.text = @"";
-	[self performSelector:@selector(run_tests) withObject:nil afterDelay:0];
+	// Note that running the examples already tests NSObject delayed block
+	// execution category.
+	[self after:0 perform:^{ [self run_tests]; }];
 }
 
 - (void)push_table
