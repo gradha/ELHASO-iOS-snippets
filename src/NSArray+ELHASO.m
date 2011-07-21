@@ -24,6 +24,25 @@
 	return [self objectAtIndex:pos];
 }
 
+/** Similar to get, but turns NSNull objects into nil values.
+ * This is an additional wrapper on top of get:, useful when you deal with
+ * sparse arrays. These tend to be of NSMutableArray class where for the empty
+ * slots you put in an NSNull object. At a later time you will exchange the
+ * NSNull object with something else. But in the meantime you don't want to
+ * bother with tiresome NSNull checks.
+ *
+ * \return Returns nil if the object at the position is an NSNull object, or
+ * the object get: would return otherwise.
+ */
+- (id)get_non_null:(int)pos
+{
+	NSObject *something = [self get:pos];
+	if ([something isKindOfClass:[NSNull class]])
+		return nil;
+	else
+		return something;
+}
+
 @end
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc

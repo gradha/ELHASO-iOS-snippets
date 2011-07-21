@@ -65,11 +65,15 @@
 
 - (void)run_nsarray_tests
 {
-	NSArray *t1 = [NSArray arrayWithObject:@"Test"];
+	NSArray *t1 = [NSArray arrayWithObjects:@"Test", [NSNull null], nil];
 	LOG(@"Getting first entry of NSArray '%@'", [t1 get:0]);
-	LOG(@"Getting out of bonds entry of NSArray '%@'", [t1 get:1]);
+	LOG(@"Getting out of bonds entry of NSArray '%@'", [t1 get:10]);
 	LOG(@"Repeating with NON_NIL_STRING '%@'",
+		NON_NIL_STRING([t1 get:10]));
+	LOG(@"Getting second entry of NSArray '%@'",
 		NON_NIL_STRING([t1 get:1]));
+	LOG(@"What if we dislike NSNull objects? '%@'",
+		NON_NIL_STRING([t1 get_non_null:1]));
 }
 
 - (void)run_nsstring_tests
