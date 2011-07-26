@@ -72,6 +72,10 @@
 	(UIViewAutoresizingFlexibleHeight | \
 	UIViewAutoresizingFlexibleWidth)
 
+/// Stick this in code you want to assert if run on the main UI thread.
+#define DONT_BLOCK_UI() \
+	NSAssert(![NSThread isMainThread], @"Don't block the UI thread please!")
+
 
 /// Prototypes of some miscelaneous C functions.
 NSString *get_path(NSString *filename, DIR_TYPE dir_type);

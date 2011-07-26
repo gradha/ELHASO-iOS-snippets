@@ -217,6 +217,11 @@
 - (void)run_misc_tests
 {
 	LOG(@"Running misc tests...");
+
+	// If you remove "InBackground" in the next call, it will assert.
+	[self performSelectorInBackground:@selector(run_in_background)
+		withObject:nil];
+
 	NSString *png = @"electric_hands_software_hand_logo.jpg";
 	LOG(@"Let's build hypothetical paths to the file %@", png);
 	LOG(@"Bundle: %@", get_path(png, DIR_BUNDLE));
@@ -225,6 +230,13 @@
 	LOG(@"Lib: %@", get_path(png, DIR_LIB));
 	LOG(@"Running simulated memory warning... %@",
 		simulate_memory_warning() ? @"YES" : @"NO");
+}
+
+- (void)run_in_background
+{
+	// Please remember that DONT_BLOCK_UI won't do anything in release mode!
+	DONT_BLOCK_UI();
+	DLOG(@"If you read this, it means we are not blocking the user interface");
 }
 
 - (void)run_tests
