@@ -117,6 +117,11 @@
 		bounds:CGRectMake(0, 0, 100, 100) fit:YES radius:10];
 	LOG(@"You might not have noticed, but I just created a rounded label!");
 	LOG(@"%@", ASK_GETTER(round, recursiveDescription, nil));
+
+	round = [UILabel round_text:@"Test"
+		bounds:CGRectMake(0, 0, 100, 100) fit:YES radius:10
+		view:[UIImageView imageNamed:LOGO_FILENAME]];
+	LOG(@"And another one I created has even a cute logo");
 }
 
 - (void)run_location_tests
