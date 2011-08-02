@@ -74,7 +74,7 @@
 {
 	UIView *base = [self round_text:text bounds:bounds fit:fit radius:radius];
 	if (!custom_view) {
-		DLOG(@"Uh oh, you called round_text with a nil custom_view?");
+		//DLOG(@"Uh oh, you called round_text with a nil custom_view?");
 		return base;
 	}
 
