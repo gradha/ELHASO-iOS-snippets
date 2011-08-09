@@ -83,6 +83,21 @@
 /// Size of the default scroll view scroll indicator.
 #define SCROLLBAR_WIDTH			7
 
+/// Shortcut GCD macros to type less.
+#define dispatch_async_low(BLOCK) \
+	dispatch_async( \
+		dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), BLOCK)
+
+#define dispatch_async_default(BLOCK) \
+	dispatch_async( \
+		dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), BLOCK)
+
+#define dispatch_async_high(BLOCK) \
+	dispatch_async( \
+		dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), BLOCK)
+
+#define dispatch_async_ui(BLOCK) \
+	dispatch_async(dispatch_get_main_queue(), BLOCK)
 
 
 /// Prototypes of some miscelaneous C functions.
