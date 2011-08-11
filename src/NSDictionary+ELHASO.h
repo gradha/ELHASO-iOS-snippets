@@ -9,6 +9,7 @@
 - (UIImage*)get_image_2x:(NSString*)key def:(UIImage*)def;
 - (uint64_t)get_int64:(NSString*)key def:(uint64_t)def;
 - (int)get_int:(NSString*)key def:(int)def;
+- (unsigned int)get_uint:(NSString*)key def:(unsigned int)def;
 - (float)get_float:(NSString*)key def:(float)def;
 - (double)get_double:(NSString*)key def:(double)def;
 - (BOOL)get_bool:(NSString*)key def:(BOOL)def;

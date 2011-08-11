@@ -152,6 +152,7 @@
 	// Presume the following dictionary is the result of JSON parsing action...
 	// ...and pretend these are no the ugly macros you are searching for.
 #define NUM(X)		[NSNumber numberWithInt:X]
+#define UNUM(X)		[NSNumber numberWithUnsignedInt:X]
 #define ARRAY(...)	[NSArray arrayWithObjects:__VA_ARGS__]
 #define DICT(...)	[NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__]
 
@@ -160,6 +161,7 @@
 		ARRAY(NUM(128), NUM(128), nil), @"rect_size",
 		ARRAY(NUM(1), NUM(2), NUM(3), NUM(4), NUM(5), nil), @"valid_int_array",
 		ARRAY(NUM(1), @"Saboteur!", NUM(3), nil), @"invalid_array",
+		UNUM(-1), @"uint",
 		DICT(@"value", @"a string", NUM(4), @"a number", nil), @"dictionary",
 		@"Visit http://elhaso.com/ please!", @"just a lame ad",
 		[NSNumber numberWithBool:false], @"true_story_bro",
@@ -196,6 +198,7 @@
 	LOG(@"Converted a pair of ints to size %@",
 		NSStringFromCGSize([data get_size:@"rect_size" def:CGSizeZero]));
 
+	LOG(@"The value of the unsigned int is %u", [data get_uint:@"uint" def:0]);
 	LOG(@"Get an array of ints: %@",
 		[data get_array:@"valid_int_array" of:[NSNumber class] def:nil]);
 

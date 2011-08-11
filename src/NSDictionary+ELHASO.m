@@ -79,6 +79,25 @@
 	}
 }
 
+/** Returns an unsigned int from the dictionary.
+ * If the object is not found, returns the default value.
+ */
+- (unsigned int)get_uint:(NSString*)key def:(unsigned int)def
+{
+	id int_object = [self objectForKey:key];
+	if (int_object) {
+		if ([int_object isKindOfClass:[NSNumber class]]) {
+			return [int_object unsignedIntValue];
+		} else {
+			DLOG(@"Expecting int in JSON, got %@ '%@'",
+				[int_object class], int_object);
+			return def;
+		}
+	} else {
+		return def;
+	}
+}
+
 /** Returns a float from the dictionary.
  * If the object is not found, returns the default value.
  */
