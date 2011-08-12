@@ -104,6 +104,7 @@
 NSString *get_path(NSString *filename, DIR_TYPE dir_type);
 void swizzle(Class c, SEL orig, SEL new);
 int simulate_memory_warning(void);
+void run_on_ui(dispatch_block_t block);
 
 #endif // __ELHASO_MACRO_H__
 

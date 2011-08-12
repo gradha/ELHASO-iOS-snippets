@@ -105,4 +105,19 @@ int simulate_memory_warning(void)
 	return 0;
 }
 
+/** Conditional wrapper around dispatch_async_ui()
+ * Sometimes you are writting code which can run in both the UI and a
+ * background thread. To avoid tiresome ifs, you can run this function and pass
+ * a block. If you are running on the main thread, the block will run
+ * immediately, otherwise it will be queued on the main thread to run in the
+ * near future.
+ */
+void run_on_ui(dispatch_block_t block)
+{
+	if ([NSThread isMainThread])
+		block();
+	else
+		dispatch_async_ui(block);
+}
+
 // vim:tabstop=4 shiftwidth=4 syntax=objc
