@@ -6,6 +6,7 @@
 @interface UIView (ELHASO)
 
 - (void)align_rect;
+- (void)center_inside:(UIView*)other;
 
 @end
 
