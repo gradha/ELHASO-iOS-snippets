@@ -3,8 +3,32 @@
 #import "ELHASO.h"
 
 #import <math.h>
+#import <objc/runtime.h>
+
 
 @implementation CLLocation (ELHASO)
+
+/* Special compatibility initializer.
+ * This brings the gap between ios 3.x and 4.x, where Apple deprecated
+ * getDistanceFrom method. On 3.x the distanceFromLocation method doesn't
+ * exist, so this initializer creates a link to it. On 4.x the method exists,
+ * so class_addMethod does nothing. Also, this prevents the initializer from
+ * requiring witnesses against double initialization.
+ *
+ * For more information see
+ * http://0xced.blogspot.com/2010/09/cllocation-getdistancefrom-vs.html
+ */
++ (void)initialize
+{
+	Method getDistanceFrom = class_getInstanceMethod([CLLocation class],
+		@selector(getDistanceFrom:));
+
+	if (class_addMethod([CLLocation class], @selector(distanceFromLocation:),
+			method_getImplementation(getDistanceFrom),
+			method_getTypeEncoding(getDistanceFrom))) {
+		DLOG(@"Added distanceFromLocation: method as link to getDistanceFrom:");
+	}
+}
 
 /** Returns the distance to a location.
  * Pass YES as the do_round parameter if you want to round the returned
@@ -24,22 +48,7 @@
 	if (!location)
 		return MAX_DISTANCE;
 
-	static BOOL virgin = YES;
-	static BOOL old_method = NO;
-
-	if (virgin) {
-		if ([location respondsToSelector:@selector(distanceFromLocation:)]) {
-			old_method = NO;
-			DLOG(@"First CLLocation, using new distance methods");
-		} else {
-			old_method = YES;
-			DLOG(@"First CLLocation, using old distance methods");
-		}
-		virgin = NO;
-	}
-
-	const double distance = old_method ? [self getDistanceFrom:location] :
-		[self distanceFromLocation:location];
+	const double distance = [self distanceFromLocation:location];
 
 	if (!do_round)
 		return distance;
