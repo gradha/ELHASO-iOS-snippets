@@ -8,6 +8,7 @@
 
 - (id)get:(int)pos;
 - (id)get_non_null:(int)pos;
+- (NSMutableArray*)get_holder;
 
 @end
 

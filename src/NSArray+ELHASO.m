@@ -43,6 +43,16 @@
 		return something;
 }
 
+/** This method calls [NSMutable arrayWithCapacity] with the current capacity.
+ * Note that if you are calling this on a nil pointer you will get nil
+ * returned, so maybe this is not the method you are looking for! Also, a
+ * minimum capacity of 4 will always be used.
+ */
+- (NSMutableArray*)get_holder
+{
+	return [NSMutableArray arrayWithCapacity:MIN(4, self.count)];
+}
+
 @end
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc
