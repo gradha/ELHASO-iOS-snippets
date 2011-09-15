@@ -83,6 +83,19 @@
 /// Size of the default scroll view scroll indicator.
 #define SCROLLBAR_WIDTH			7
 
+/// Handy macro to type less in viewDidUnload-like methods.
+#define UNLOAD_VIEW(VAR) do {\
+		[VAR removeFromSuperview];\
+		[VAR release];\
+		VAR = nil;\
+	} while(0)
+
+/// Like UNLOAD_VIEW() but for non-view objects.
+#define UNLOAD_OBJECT(VAR) do {\
+		[VAR release];\
+		VAR = nil;\
+	} while(0)
+
 /// Shortcut GCD macros to type less.
 #define dispatch_async_low(BLOCK) \
 	dispatch_async( \
