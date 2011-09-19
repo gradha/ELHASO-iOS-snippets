@@ -31,10 +31,14 @@
 /// Returns the emtpy string if the parameter is nil.
 #define NON_NIL_STRING(VAR)	((nil == VAR) ? @"": VAR)
 
+/// Make the default NSAssert show the expression triggering it.
+#define LASSERT(COND,TEXT) \
+	NSAssert(COND, @"" #COND @": " TEXT)
+
 /// Experimenting with new runtime assert macro.
 #ifdef DEBUG
 #define RASSERT(COND,TEXT,EXPR)											\
-	NSAssert(COND, TEXT)
+	LASSERT(COND, TEXT)
 #else
 #define RASSERT(COND,TEXT,EXPR)											\
 	if (!(COND)) {														\
