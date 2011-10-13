@@ -120,4 +120,20 @@ void run_on_ui(dispatch_block_t block)
 		dispatch_async_ui(block);
 }
 
+/** Modified blocking version of run_on_ui().
+ * This is nearly identical to run_on_ui(), the difference being that if you
+ * are not running on the main thread, your code will wait for the ui thread
+ * with dispatch_sync() to do what you are specifying in the block.
+ *
+ * Consider this a version where you want to make sure something is done on the
+ * UI rather than asking the UI to do something but not caring exactly when.
+ */
+void wait_for_ui(dispatch_block_t block)
+{
+	if ([NSThread isMainThread])
+		block();
+	else
+		dispatch_sync(dispatch_get_main_queue(), block);
+}
+
 // vim:tabstop=4 shiftwidth=4 syntax=objc
