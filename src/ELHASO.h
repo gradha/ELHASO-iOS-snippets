@@ -9,6 +9,15 @@
 /// Useful macro to get the number of elements in any array type.
 #define DIM(x)	(sizeof((x)) / sizeof((x)[0]))
 
+/// Environment variable shortcut, returns nil for non debug builds
+#ifdef DEBUG
+#define DEBUG_ENV_VAR(NAME) \
+	((NSString*)[[[NSProcessInfo processInfo] environment] valueForKey:NAME])
+#else
+#define DEBUG_ENV_VAR(NAME) \
+	((NSString*)nil)
+#endif
+
 /// Log only if the symbol DEBUG is defined.
 #ifdef DEBUG
 #define DLOG(...)			NSLog(__VA_ARGS__)
