@@ -18,13 +18,17 @@
  */
 NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 {
+#ifdef DEBUG
 	NSString *dir_name = nil;
+#endif
 	NSString *path = nil;
 
 	switch (dir_type) {
 		case DIR_BUNDLE:
 			path = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
+#ifdef DEBUG
 			dir_name = @"bundle";
+#endif
 			break;
 
 		case DIR_DOCS:
@@ -33,7 +37,9 @@ NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 				NSDocumentDirectory, NSUserDomainMask, YES);
 			NSString *documentsDirectory = [paths get:0];
 			path = [documentsDirectory stringByAppendingPathComponent:filename];
+#ifdef DEBUG
 			dir_name = @"doc directory";
+#endif
 			break;
 		}
 
@@ -43,7 +49,9 @@ NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 				NSCachesDirectory, NSUserDomainMask, YES);
 			NSString *documentsDirectory = [paths get:0];
 			path = [documentsDirectory stringByAppendingPathComponent:filename];
+#ifdef DEBUG
 			dir_name = @"cache directory";
+#endif
 			break;
 		}
 
@@ -53,7 +61,9 @@ NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 					NSLibraryDirectory, NSUserDomainMask, YES);
 			NSString *documentsDirectory = [paths get:0];
 			path = [documentsDirectory stringByAppendingPathComponent:filename];
+#ifdef DEBUG
 			dir_name = @"lib directory";
+#endif
 			break;
 		}
 
@@ -63,8 +73,10 @@ NSString *get_path(NSString *filename, DIR_TYPE dir_type)
 			return 0;
 	}
 
+#ifdef DEBUG
 	if (!path)
 		DLOG(@"File '%@' not found inside %@!", filename, dir_name);
+#endif
 
 	return path;
 }
