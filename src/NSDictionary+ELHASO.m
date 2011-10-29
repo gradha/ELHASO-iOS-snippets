@@ -50,6 +50,8 @@
 	if (int_object) {
 		if ([int_object isKindOfClass:[NSDecimalNumber class]]) {
 			return [int_object doubleValue];
+		} else if ([int_object isKindOfClass:[NSNumber class]]) {
+			return [int_object longLongValue];
 		} else {
 			DLOG(@"Expecting int64 in JSON, got %@ '%@'",
 				[int_object class], int_object);
