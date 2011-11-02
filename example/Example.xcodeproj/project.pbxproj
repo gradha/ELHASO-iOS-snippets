@@ -29,6 +29,10 @@
 		D597A15313D0976300CC220B /* NSObject+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D597A15213D0976300CC220B /* NSObject+ELHASO.m */; };
 		D5B3DC9F13C8AA970021B65D /* Root_table_controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B3DC9E13C8AA970021B65D /* Root_table_controller.m */; };
 		D5B3DDAF13C8B7590021B65D /* UINavigationController+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */; };
+		D5F0ACCA1461551800EC4121 /* NSMutableArray+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0ACC71461551800EC4121 /* NSMutableArray+ELHASO.m */; };
+		D5F0ACCB1461551800EC4121 /* NSNotificationCenter+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0ACC91461551800EC4121 /* NSNotificationCenter+ELHASO.m */; };
+		D5F0ACCE1461552700EC4121 /* UIView+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0ACCD1461552700EC4121 /* UIView+ELHASO.m */; };
+		D5F0ACD11461553400EC4121 /* UIActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F0ACD01461553400EC4121 /* UIActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +77,14 @@
 		D597A15213D0976300CC220B /* NSObject+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ELHASO.m"; sourceTree = "<group>"; };
 		D5B3DC9D13C8AA970021B65D /* Root_table_controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Root_table_controller.h; sourceTree = "<group>"; };
 		D5B3DC9E13C8AA970021B65D /* Root_table_controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Root_table_controller.m; sourceTree = "<group>"; };
+		D5F0ACC61461551800EC4121 /* NSMutableArray+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ELHASO.h"; sourceTree = "<group>"; };
+		D5F0ACC71461551800EC4121 /* NSMutableArray+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ELHASO.m"; sourceTree = "<group>"; };
+		D5F0ACC81461551800EC4121 /* NSNotificationCenter+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+ELHASO.h"; sourceTree = "<group>"; };
+		D5F0ACC91461551800EC4121 /* NSNotificationCenter+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+ELHASO.m"; sourceTree = "<group>"; };
+		D5F0ACCC1461552700EC4121 /* UIView+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ELHASO.h"; sourceTree = "<group>"; };
+		D5F0ACCD1461552700EC4121 /* UIView+ELHASO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ELHASO.m"; sourceTree = "<group>"; };
+		D5F0ACCF1461553400EC4121 /* UIActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivity.h; sourceTree = "<group>"; };
+		D5F0ACD01461553400EC4121 /* UIActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIActivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,9 +157,15 @@
 				D5173C7F13AEA596001EEACC /* NSArray+ELHASO.m */,
 				D5173C8013AEA596001EEACC /* NSDictionary+ELHASO.h */,
 				D5173C8113AEA596001EEACC /* NSDictionary+ELHASO.m */,
+				D5F0ACC61461551800EC4121 /* NSMutableArray+ELHASO.h */,
+				D5F0ACC71461551800EC4121 /* NSMutableArray+ELHASO.m */,
+				D5F0ACC81461551800EC4121 /* NSNotificationCenter+ELHASO.h */,
+				D5F0ACC91461551800EC4121 /* NSNotificationCenter+ELHASO.m */,
 				D597A15113D0976300CC220B /* NSObject+ELHASO.h */,
 				D597A15213D0976300CC220B /* NSObject+ELHASO.m */,
 				D5173C8213AEA596001EEACC /* NSString+ELHASO.h */,
+				D5F0ACCF1461553400EC4121 /* UIActivity.h */,
+				D5F0ACD01461553400EC4121 /* UIActivity.m */,
 				D5173C8313AEA596001EEACC /* NSString+ELHASO.m */,
 				D5173C8413AEA596001EEACC /* UIImage+ELHASO.h */,
 				D5173C8513AEA596001EEACC /* UIImage+ELHASO.m */,
@@ -157,6 +175,8 @@
 				D5173C8913AEA596001EEACC /* UILabel+ELHASO.m */,
 				D5173C8A13AEA596001EEACC /* UINavigationController+ELHASO.h */,
 				D5173C8B13AEA596001EEACC /* UINavigationController+ELHASO.m */,
+				D5F0ACCC1461552700EC4121 /* UIView+ELHASO.h */,
+				D5F0ACCD1461552700EC4121 /* UIView+ELHASO.m */,
 			);
 			name = "ELHASO-iOS-snippets";
 			path = ../src;
@@ -272,6 +292,10 @@
 				D525502713C9B64D0050DD86 /* ELHASO.m in Sources */,
 				D597A15313D0976300CC220B /* NSObject+ELHASO.m in Sources */,
 				D581190813E97DD5007DB15F /* ELHASO_cell.m in Sources */,
+				D5F0ACCA1461551800EC4121 /* NSMutableArray+ELHASO.m in Sources */,
+				D5F0ACCB1461551800EC4121 /* NSNotificationCenter+ELHASO.m in Sources */,
+				D5F0ACCE1461552700EC4121 /* UIView+ELHASO.m in Sources */,
+				D5F0ACD11461553400EC4121 /* UIActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
