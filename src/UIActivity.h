@@ -9,6 +9,8 @@
 + (UIActivity*)get_white;
 + (UIActivity*)get_gray;
 
+- (void)set_translucent:(CGSize)size corner:(int)radius;
+
 @end
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc
