@@ -18,15 +18,19 @@
 	((NSString*)nil)
 #endif
 
+#ifndef DLOG
 /// Log only if the symbol DEBUG is defined.
 #ifdef DEBUG
 #define DLOG(...)			NSLog(__VA_ARGS__)
 #else
 #define DLOG(...)			do {} while (0)
 #endif // DEBUG
+#endif // DLOG
 
 /// Log always, avoid stupid CamelCase.
+#ifndef LOG
 #define LOG(...)			NSLog(__VA_ARGS__)
+#endif // LOG
 
 /// Verifies if the mask value VAL is set in the variable.
 #define IS_BIT(VAR,VAL)		((VAR) & (VAL))
