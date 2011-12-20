@@ -113,6 +113,11 @@
 		VAR = nil;\
 	} while(0)
 
+/// Safe casting of id objects to some other class type, returns nil on failure.
+#define CAST(OBJ,CLASS) \
+	(([(OBJ) isKindOfClass:[CLASS class]]) ? (CLASS*)((OBJ)) : nil)
+
+
 /// Shortcut GCD macros to type less.
 #define dispatch_async_low(BLOCK) \
 	dispatch_async( \
