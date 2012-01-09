@@ -135,6 +135,12 @@
 	dispatch_async(dispatch_get_main_queue(), BLOCK)
 
 
+// Shortcuts to avoid repeating too much boring code defining notifications.
+#define EXTERNAL_NOTIFICATION(NAME)	extern NSString *const NAME
+
+#define DECLARE_NOTIFICATION(NAME) NSString *const NAME = @"" # NAME
+
+
 /// Prototypes of some miscelaneous C functions.
 NSString *get_path(NSString *filename, DIR_TYPE dir_type);
 void swizzle(Class c, SEL orig, SEL new);
