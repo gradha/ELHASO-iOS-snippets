@@ -51,6 +51,15 @@
 	[super dealloc];
 }
 
+/** Changes the selection mode.
+ * This highlights the cell and forces a refresh.
+ */
+- (void)setSelected:(BOOL)selected
+{
+	[super setSelected:selected];
+	[self setNeedsDisplay];
+}
+
 /** Special handler method because of drawContentView and inheritance.
  * Forces a refresh of our custom view.
  */
