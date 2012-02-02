@@ -148,6 +148,16 @@ int simulate_memory_warning(void);
 void run_on_ui(dispatch_block_t block);
 void wait_for_ui(dispatch_block_t block);
 
+/** Runs a block after the specified amount of seconds.
+ * Unlike the NSObject+ELHASO category, this doesn't depend on run loops, so
+ * you should be safe to run it in all cases. Note that the block will be run
+ * on the current thread. Inspired from
+ * http://stackoverflow.com/a/4139331/172690.
+ */
+#define RUN_AFTER(SECONDS, BLOCK) \
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, SECONDS * NSEC_PER_SEC), \
+		dispatch_get_current_queue(), BLOCK)
+
 #endif // __ELHASO_MACRO_H__
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc
