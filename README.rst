@@ -126,6 +126,11 @@ also link against the CoreLocation framework, or you will get link errors. If
 you don't want to use CoreLocation, simply uncheck in XCode the inclusion of
 the ``CLLocation+ELHASO.*`` files for your target build target.
 
+The class EHTimer wraps around NSTimer using the MAZeroingWeakRef
+class which you can find at https://github.com/mikeash/MAZeroingWeakRef.
+If you don't need EHTimer don't include it and you won't get compile
+erros due to MAZeroingWeakRef not being available.
+
 
 Documentation
 -------------
