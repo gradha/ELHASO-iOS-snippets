@@ -33,7 +33,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style
 	reuseIdentifier:(NSString *)reuseIdentifier
 {
-	if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
 		content_view_ = [[ELHASO_cell_view alloc]
 			initWithFrame:self.contentView.bounds];
 		content_view_.opaque = YES;
