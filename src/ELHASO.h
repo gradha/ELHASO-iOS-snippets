@@ -21,7 +21,10 @@
 #ifndef DLOG
 /// Log only if the symbol DEBUG is defined.
 #ifdef DEBUG
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpedantic"
 #define DLOG(...)			NSLog(__VA_ARGS__)
+#pragma clang diagnostic pop
 #else
 #define DLOG(...)			do {} while (0)
 #endif // DEBUG
@@ -29,7 +32,10 @@
 
 /// Log always, avoid stupid CamelCase.
 #ifndef LOG
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpedantic"
 #define LOG(...)			NSLog(__VA_ARGS__)
+#pragma clang diagnostic pop
 #endif // LOG
 
 /// Verifies if the mask value VAL is set in the variable.
@@ -46,12 +52,18 @@
 
 /// Make the default NSAssert show the expression triggering it.
 #define LASSERT(COND,TEXT) \
-	NSAssert(COND, @"" #COND @": " TEXT)
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wpedantic\"") \
+	NSAssert(COND, @"" #COND @": " TEXT) \
+_Pragma("clang diagnostic pop")
 
 /// Experimenting with new runtime assert macro.
 #ifdef DEBUG
-#define RASSERT(COND,TEXT,EXPR)											\
-	LASSERT(COND, TEXT)
+#define RASSERT(COND,TEXT,EXPR) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wpedantic\"") \
+	LASSERT(COND, TEXT) \
+_Pragma("clang diagnostic pop")
 #else
 #define RASSERT(COND,TEXT,EXPR)											\
 	if (!(COND)) {														\
@@ -91,11 +103,17 @@
 
 /// Stick this in code you want to assert if run on the main UI thread.
 #define DONT_BLOCK_UI() \
-	NSAssert(![NSThread isMainThread], @"Don't block the UI thread please!")
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wpedantic\"") \
+	NSAssert(![NSThread isMainThread], @"Don't block the UI thread please!") \
+_Pragma("clang diagnostic pop")
 
 /// Stick this in code you want to assert if run on a background thread.
 #define BLOCK_UI() \
-	NSAssert([NSThread isMainThread], @"You aren't running in the UI thread!")
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wpedantic\"") \
+	NSAssert([NSThread isMainThread], @"You aren't running in the UI thread!") \
+_Pragma("clang diagnostic pop")
 
 /// Size of the default scroll view scroll indicator.
 #define SCROLLBAR_WIDTH			7
