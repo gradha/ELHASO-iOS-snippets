@@ -22,7 +22,7 @@
 + (UIView*)round_text:(NSString*)text bounds:(CGRect)bounds fit:(BOOL)fit
 	radius:(float)radius
 {
-	NSAssert(radius >= 0, @"Negative radius?");
+	LASSERT(radius >= 0, @"Negative radius?");
 	CGRect rect = bounds;
 	/* If we have to fit the label, make the bounds smaller to have a border. */
 	if (fit) {
@@ -79,9 +79,9 @@
 	}
 
 	// First make sure the base contains what we expect.
-	NSAssert(1 == base.subviews.count, @"What? I was expecting a single child");
+	LASSERT(1 == base.subviews.count, @"What? I was expecting a single child");
 	UILabel *label = [base.subviews get:0];
-	NSAssert([label isKindOfClass:[UILabel class]], @"Unexpected child type");
+	LASSERT([label isKindOfClass:[UILabel class]], @"Unexpected child type");
 	base.frame = base.bounds;
 	CGRect rect = label.frame;
 

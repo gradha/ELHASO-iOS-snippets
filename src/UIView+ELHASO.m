@@ -36,7 +36,7 @@
 	if (!other)
 		return;
 
-	NSAssert(!self.superview || self.superview == other,
+	LASSERT(!self.superview || self.superview == other,
 		@"Bad hierarchy, receiver needs to be orphan or child of other!");
 	CGRect rect = self.bounds;
 	rect.origin.x = other.bounds.size.width / 2.0f - rect.size.width / 2.0f;

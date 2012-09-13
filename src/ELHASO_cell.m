@@ -21,7 +21,7 @@
 
 - (id)initWithIdentifier:(NSString *)identifier
 {
-	NSAssert(NO, @"This constructor is deprecated, don't use it!");
+	LASSERT(NO, @"This constructor is deprecated, don't use it!");
 	[self doesNotRecognizeSelector:_cmd];
 	[self release];
 	return nil;

@@ -68,7 +68,7 @@
 	}
 
 	double new_distance = ceil(distance * rounder) * expander;
-	NSAssert(new_distance >= distance, @"What? Less distance is proportional?");
+	LASSERT(new_distance >= distance, @"What? Less distance is proportional?");
 
 	//DLOG(@"Accuracy %0.0f, new_distance %0.1fm, diff %0.0f",
 		//accuracy, new_distance, new_distance - distance);

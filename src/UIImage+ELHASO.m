@@ -38,8 +38,8 @@
 		(int)size.width, (int)size.height);
 #endif
 
-	NSAssert(rect.size.width > 0, @"Scaling image to width less than 1");
-	NSAssert(rect.size.height > 0, @"Scaling image to height less than 1");
+	LASSERT(rect.size.width > 0, @"Scaling image to width less than 1");
+	LASSERT(rect.size.height > 0, @"Scaling image to height less than 1");
 	if (rect.size.width > 1024 || rect.size.height > 1024) {
 		DLOG(@"WARNING: Image scaled to %0.0fx%0.0f, iphone 3g is fried!",
 			rect.size.width, rect.size.height);
@@ -93,11 +93,11 @@
 */
 
 	UIImage *scaled = UIGraphicsGetImageFromCurrentImageContext();
-	NSAssert(scaled, @"Couldn't scale image?");
+	LASSERT(scaled, @"Couldn't scale image?");
 	UIGraphicsEndImageContext();
 	if (scaled) {
-		NSAssert(scaled.size.width == size.width, @"Bad code");
-		NSAssert(scaled.size.height == size.height, @"Bad code");
+		LASSERT(scaled.size.width == size.width, @"Bad code");
+		LASSERT(scaled.size.height == size.height, @"Bad code");
 	}
 
 	return scaled;
