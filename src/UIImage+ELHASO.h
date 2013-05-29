@@ -5,6 +5,7 @@
 
 - (UIImage*)scale_to:(CGSize)size;
 - (UIImage*)scale_to:(CGSize)size proportional:(BOOL)proportional;
+- (void)draw_in_rect:(CGRect)rect mode:(UIViewContentMode)mode;
 
 @end
 
