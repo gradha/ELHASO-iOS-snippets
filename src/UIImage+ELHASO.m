@@ -134,8 +134,8 @@
 				w *= factor;
 				h *= factor;
 			}
-			NSAssert(w >= max_w, @"Didn't reach expected width?");
-			NSAssert(h >= max_h, @"Didn't reach expected height?");
+			NSAssert(w >= max_w - 0.1f, @"Didn't reach expected width?");
+			NSAssert(h >= max_h - 0.1f, @"Didn't reach expected height?");
 
 			rect.origin.x += (max_w - w) / 2.0f;
 			rect.origin.y += (max_h - h) / 2.0f;
