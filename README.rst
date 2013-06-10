@@ -2,7 +2,7 @@
 Electric Hands Software iOS code snippets
 =========================================
 
-:author: Grzegorz Adam Hankiewicz <gradha@argon.sabren.com>
+:author: Grzegorz Adam Hankiewicz <elhaso@gradha.imap.cc>
 
 .. contents::
 
