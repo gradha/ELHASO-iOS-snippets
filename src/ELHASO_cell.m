@@ -5,17 +5,28 @@
 
 /// Small subclass to handle custom drawing of cells.
 @interface ELHASO_cell_view : UIView
+@property (nonatomic, assign) ELHASO_cell *parent;
 @end
 
 @implementation ELHASO_cell_view
 
 - (void)drawRect:(CGRect)rect
 {
-	[(ELHASO_cell*)[self superview] draw_content:rect];
+	LASSERT(_parent, @"No parent?");
+	LASSERT([_parent respondsToSelector:@selector(draw_content:)],
+		@"The parent has to implement the draw_content: selector");
+	[_parent draw_content:rect];
 }
 
 @end
 
+
+@interface ELHASO_cell ()
+{
+	/// Internal view to handle custom drawing.
+	ELHASO_cell_view *content_view_;
+}
+@end
 
 @implementation ELHASO_cell
 
@@ -36,6 +47,7 @@
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
 		content_view_ = [[ELHASO_cell_view alloc]
 			initWithFrame:self.contentView.bounds];
+		content_view_.parent = self;
 		content_view_.opaque = YES;
 		content_view_.autoresizingMask = FLEXIBLE_SIZE;
 		content_view_.autoresizesSubviews = YES;

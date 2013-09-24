@@ -4,11 +4,8 @@
  * You are supposed to inherit from this class then implement the draw_content
  * method without calling super.
  */
+
 @interface ELHASO_cell : UITableViewCell
-{
-	/// Internal view to handle custom drawing.
-	UIView *content_view_;
-}
 
 - (id)initWithStyle:(UITableViewCellStyle)style
 	reuseIdentifier:(NSString *)reuseIdentifier;
