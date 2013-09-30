@@ -156,7 +156,7 @@ Unless otherwise stated, all the source code in this repository is available
 under the MIT license (http://www.opensource.org/licenses/mit-license.php)
 meaning that you can take what you want and not give back. However, you might
 want to thank me buying some comercial program I wrote, and who knows, you
-might even like it! You can visit Electric Hands Software at http://elhaso.com/
+might even like it! You can visit Electric Hands Software at http://elhaso.es/
 or the app store at
 http://itunes.apple.com/es/artist/electric-hands-software/id325946567.
 

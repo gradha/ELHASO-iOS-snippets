@@ -78,8 +78,8 @@
 
 - (void)run_nsstring_tests
 {
-	NSArray *strings = [NSArray arrayWithObjects:@"http://elhaso.com/blah",
-		@"http://elhaso.com/subhunt/index.en.html", @"../i/logo.png", nil];
+	NSArray *strings = [NSArray arrayWithObjects:@"http://elhaso.es/blah",
+		@"http://elhaso.es/subhunt/index.en.html", @"../i/logo.png", nil];
 
 	for (NSString *url in strings) {
 		LOG(@"Url '%@'", url);
@@ -163,7 +163,7 @@
 		ARRAY(NUM(1), @"Saboteur!", NUM(3), nil), @"invalid_array",
 		UNUM(-1), @"uint",
 		DICT(@"value", @"a string", NUM(4), @"a number", nil), @"dictionary",
-		@"Visit http://elhaso.com/ please!", @"just a lame ad",
+		@"Visit http://elhaso.es/ please!", @"just a lame ad",
 		[NSNumber numberWithBool:false], @"true_story_bro",
 		[NSNumber numberWithDouble:M_PI], @"pi_double",
 		[NSNumber numberWithFloat:M_PI], @"pi_float",
