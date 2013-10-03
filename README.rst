@@ -95,6 +95,12 @@ clicking on the group select "**Add/Existing files...**". Navigate and add the
 ``src`` subdirectory. You don't want to include anything else like this README
 or the example directory.
 
+If you are using ARC in your project, now that you've added source files to
+your target you need to specify the ``-fno-objc-arc`` parameter for them.
+Navigate to your target's build phases and filter the "**Compile Sources**"
+section by the prefix ``EH`` and later by the word ``ELHASO`` to find the files
+you need to add this parameter for.
+
 Now using a category in your project should work.  However, the project outline
 looks weird with this **external/src** branch.  Rename the **src** part to
 **ELHASO-iOS-snippets** (or something shorter) so you can recognise it more
