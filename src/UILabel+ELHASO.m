@@ -5,6 +5,10 @@
 
 #import <QuartzCore/CALayer.h>
 
+#ifdef __IPHONE_6_0 // iOS6 and later
+#   define UITextAlignmentCenter    NSTextAlignmentCenter
+#endif
+
 @implementation UILabel (ELHASO)
 
 /** Creates a label with a special UIView background to be legible.
