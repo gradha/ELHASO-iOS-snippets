@@ -15,7 +15,7 @@
 	name:(NSString*)name object:(id)object
 {
 	[self removeObserver:observer name:name object:object];
-	[self addObserver:observer selector:selector name:name object:nil];
+	[self addObserver:observer selector:selector name:name object:object];
 }
 
 @end
