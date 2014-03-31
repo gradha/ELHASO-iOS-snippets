@@ -21,14 +21,9 @@
 @end
 
 
-@interface ELHASO_cell ()
-{
-	/// Internal view to handle custom drawing.
-	ELHASO_cell_view *content_view_;
-}
-@end
-
 @implementation ELHASO_cell
+
+@synthesize fast_view = fast_view_;
 
 - (id)initWithIdentifier:(NSString *)identifier
 {
@@ -39,27 +34,27 @@
 }
 
 /** Default constructor.
- * Creates the content_view_ and adds it to the view.
+ * Creates the fast_view_ and adds it to the view.
  */
 - (id)initWithStyle:(UITableViewCellStyle)style
 	reuseIdentifier:(NSString *)reuseIdentifier
 {
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-		content_view_ = [[ELHASO_cell_view alloc]
+		fast_view_ = [[ELHASO_cell_view alloc]
 			initWithFrame:self.contentView.bounds];
-		content_view_.parent = self;
-		content_view_.opaque = YES;
-		content_view_.autoresizingMask = FLEXIBLE_SIZE;
-		content_view_.autoresizesSubviews = YES;
-		content_view_.contentMode = UIViewContentModeRedraw;
-		[self addSubview:content_view_];
+		fast_view_.parent = self;
+		fast_view_.opaque = YES;
+		fast_view_.autoresizingMask = FLEXIBLE_SIZE;
+		fast_view_.autoresizesSubviews = YES;
+		fast_view_.contentMode = UIViewContentModeRedraw;
+		[self addSubview:fast_view_];
 	}
 	return self;
 }
 
 - (void)dealloc
 {
-	[content_view_ release];
+	[fast_view_ release];
 	[super dealloc];
 }
 
@@ -78,7 +73,7 @@
 - (void)setNeedsDisplay
 {
 	[super setNeedsDisplay];
-	[content_view_ setNeedsDisplay];
+	[fast_view_ setNeedsDisplay];
 }
 
 /** Method to draw the content of the cell.
