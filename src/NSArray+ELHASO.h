@@ -6,8 +6,8 @@
  */
 @interface NSArray (ELHASO)
 
-- (id)get:(int)pos;
-- (id)get_non_null:(int)pos;
+- (id)get:(NSInteger)pos;
+- (id)get_non_null:(NSInteger)pos;
 - (NSMutableArray*)get_holder;
 
 @end

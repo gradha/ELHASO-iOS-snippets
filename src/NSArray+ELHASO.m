@@ -9,7 +9,7 @@
  * method doesn't perform any synchronisation on the array, so don't use it if
  * the array may be modified underneath.
  */
-- (id)get:(int)pos
+- (id)get:(NSInteger)pos
 {
 	if (pos < 0) {
 		DLOG(@"Trying to get negative index from array, got nil.");
@@ -34,7 +34,7 @@
  * \return Returns nil if the object at the position is an NSNull object, or
  * the object get: would return otherwise.
  */
-- (id)get_non_null:(int)pos
+- (id)get_non_null:(NSInteger)pos
 {
 	NSObject *something = [self get:pos];
 	if ([something isKindOfClass:[NSNull class]])
