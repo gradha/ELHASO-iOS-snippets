@@ -54,7 +54,7 @@
 #define LASSERT(COND,TEXT) \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Wpedantic\"") \
-	NSAssert(COND, @"" #COND @": " TEXT) \
+	NSAssert(COND, @"%@", @"" #COND @": " TEXT) \
 _Pragma("clang diagnostic pop")
 
 /// Experimenting with new runtime assert macro.
