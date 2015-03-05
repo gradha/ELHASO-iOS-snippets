@@ -39,6 +39,7 @@
 
 - (void)viewDidLoad
 {
+	[super viewDidLoad];
 	self.label.text = @"";
 }
 
@@ -157,6 +158,8 @@
 #define DICT(...)	[NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__]
 
 	NSDictionary *data = DICT(
+		@"http://elhaso.es", @"url",
+		@"bad elhaso.es", @"bad_url",
 		ARRAY(NUM(255), NUM(0), NUM(0), nil), @"red_color",
 		ARRAY(NUM(128), NUM(128), nil), @"rect_size",
 		ARRAY(NUM(1), NUM(2), NUM(3), NUM(4), NUM(5), nil), @"valid_int_array",
@@ -220,6 +223,8 @@
 	LOG(@"This is our float: %f", [data get_double:@"pi_float" def:0]);
 	LOG(@"This is our int64: %lld", [data get_int64:@"long_long" def:0]);
 	LOG(@"Embedded image: %@", [data get_image:@"png_image" def:nil]);
+	LOG(@"URL: %@", [data get_url:@"url" def:nil]);
+	LOG(@"Bad URL: %@", [data get_url:@"bad_url" def:nil]);
 }
 
 - (void)run_misc_tests

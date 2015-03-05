@@ -14,6 +14,7 @@
 - (double)get_double:(NSString*)key def:(double)def;
 - (BOOL)get_bool:(NSString*)key def:(BOOL)def;
 - (NSString*)get_string:(NSString*)key def:(NSString*)def;
+- (NSURL*)get_url:(NSString*)key def:(NSURL*)def;
 - (NSDictionary*)get_dict:(NSString*)key def:(NSDictionary*)def;
 - (NSArray*)get_array:(NSString*)key def:(NSArray*)def;
 - (NSArray*)get_array:(NSString*)key of:(Class)type def:(NSArray*)def;

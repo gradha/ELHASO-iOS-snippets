@@ -179,6 +179,19 @@
 	}
 }
 
+/** Typed wrapper over get_string to retrieve URLs.
+ * Works on iOS5 and previous where passing nil would make NSURL throw up.
+ */
+- (NSURL*)get_url:(NSString*)key def:(NSURL*)def
+{
+	NSString *text = [self get_string:key def:nil];
+	if (text.length < 1)
+		return def;
+
+	NSURL* result = [NSURL URLWithString:text];
+	return (result ? result : def);
+}
+
 /** Returns a dictionary from the dictionary.
  * If the object is not found, or has a different type, returns the
  * default value.
