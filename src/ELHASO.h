@@ -176,6 +176,11 @@ void wait_for_ui(dispatch_block_t block);
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, SECONDS * NSEC_PER_SEC), \
 		dispatch_get_current_queue(), BLOCK)
 
+/** Non deprecated version, forces queue to run as UI. */
+#define RUN_UI_AFTER(SECONDS, BLOCK) \
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, SECONDS * NSEC_PER_SEC), \
+		dispatch_get_main_queue(), BLOCK)
+
 #endif // __ELHASO_MACRO_H__
 
 // vim:tabstop=4 shiftwidth=4 syntax=objc

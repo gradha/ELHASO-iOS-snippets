@@ -250,6 +250,7 @@
 	// Please remember that DONT_BLOCK_UI won't do anything in release mode!
 	DONT_BLOCK_UI();
 	DLOG(@"If you read this, it means we are not blocking the user interface");
+	RUN_UI_AFTER(1, ^{ BLOCK_UI(); });
 }
 
 - (void)run_tests
