@@ -1,3 +1,5 @@
+#import <UIKit/UIKit.h>
+
 /** \class UIImage
  * Appends some custom helpers to UIImage.
  */

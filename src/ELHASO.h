@@ -3,6 +3,8 @@
 
 #import "ELHASO-types.h"
 
+#import <UIKit/UIKit.h>
+
 /// Returns the value var restrained to inclusive lower and higher limits.
 #define MID(low,var,high)  (MIN(MAX(low, var), high))
 
